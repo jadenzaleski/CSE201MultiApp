@@ -75,22 +75,27 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand navbar-light bg-light" aria-label="Album">
+    <nav aria-label="Album" class="navbar navbar-expand navbar-light bg-light">
         <div class="container" style="box-shadow: lightgray 0px 15px 20px -15px;">
             <a class="navbar-brand" href=""><strong>Available Apps:</strong></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02"
-                    aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <button aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarsExample02" data-bs-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown"
-                           aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up me-1" viewBox="0 1 16 16">
-                            <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
-                        </svg>sort</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                           href="#">
+                            <svg class="bi bi-arrow-down-up me-1" fill="currentColor" height="16" viewBox="0 1 16 16"
+                                 width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"
+                                      fill-rule="evenodd"/>
+                            </svg>
+                            sort</a>
+                        <ul aria-labelledby="dropdown10" class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -98,11 +103,14 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-bs-toggle="dropdown"
-                           aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel me-1" viewBox="0 1 16 16">
-                            <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
-                        </svg>filter</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                           href="#">
+                            <svg class="bi bi-funnel me-1" fill="currentColor" height="16" viewBox="0 1 16 16"
+                                 width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
+                            </svg>
+                            filter</a>
+                        <ul aria-labelledby="dropdown10" class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -110,7 +118,7 @@
                     </li>
                 </ul>
                 <form class="my-2">
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    <input aria-label="Search" class="form-control" placeholder="Search" type="text">
                 </form>
             </div>
         </div>
@@ -118,204 +126,145 @@
 
     <div class="album py-5 bg-light">
         <div class="container">
-
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
+                        <!--                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"-->
+                        <!--                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"-->
+                        <!--                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>-->
+                        <!--                            <rect fill="#55595c" height="100%" width="100%"/>-->
+                        <!--                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>-->
+                        <!--                        </svg>-->
+                        <img alt="" class="card-img-top" height="225" role="img" src="test.png"
+                             style="object-fit: contain;" width="225">
 
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            <h2 class="card-title">Messanger</h2>
+                            <p class="card-text"> Desctripion of app. This is a wider card with supporting text below as
+                                a natural lead-in to
                                 additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                    <button class="btn btn-sm btn-outline-success" type="button">
+                                        <svg class="bi bi-download" fill="currentColor" height="16" viewBox="0 1 16 16"
+                                             width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary" data-bs-target="#modalCard"
+                                            data-bs-toggle="modal" type="button">
+                                        <svg class="bi bi-info-lg" fill="currentColor" height="16" viewBox="0 1 16 16"
+                                             width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
+                                        </svg>
+                                    </button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
+                                <small class="text-muted">Developer Name</small>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
 
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                    <div aria-hidden="true" aria-labelledby="staticBackdropLabel"
+                         class="modal fade modal-dialog-scrollable" data-bs-backdrop="static" data-bs-keyboard="false"
+                         id="modalCard" tabindex="-1">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Messanger</h5>
+                                    <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                            type="button"></button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
 
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+
+                                <div class="modal-body p-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg">
+                                                <img alt="..." class="mx-auto d-block shadow-lg w-25" src="test.png"
+                                                     style="border-radius: 12%;">
+                                                <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                                    do
+                                                    eiusmod tempor incididunt
+                                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                                    nostrud
+                                                    exercitation ullamco laboris nisi ut aliquip
+                                                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                                    voluptate
+                                                    velit esse cillum dolore eu fugiat nulla pariatur.
+                                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                                    officia
+                                                    deserunt mollit anim id est laborum.</p>
+
+                                                <span class="badge bg-secondary">Version: 1.0.1</span>
+                                                <span class="badge bg-secondary"><svg class="bi bi-apple me-1"
+                                                                                      fill="currentColor"
+                                                                                      height="12" viewBox="0 0 16 16"
+                                                                                      width="12"
+                                                                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                                      <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                                    </svg><svg class="bi bi-windows me-1" fill="currentColor" height="12"
+                                               viewBox="0 0 16 16" width="12" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
+                                    </svg></span>
+                                                <small class="text-muted float-end my-1">Developer Name</small>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5>Comments:</h5>
+                                                <div class="list-group overflow-scroll">
+                                                    <a aria-current="true"
+                                                       class="list-group-item list-group-item-action active"
+                                                       href="#">
+                                                        <div class="d-flex w-100 justify-content-between">
+                                                            <h5 class="mb-1">List group item heading</h5>
+                                                            <small>3 days ago</small>
+                                                        </div>
+                                                        <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                                        <small>And some small print.</small>
+                                                    </a>
+                                                    <a class="list-group-item list-group-item-action" href="#">
+                                                        <div class="d-flex w-100 justify-content-between">
+                                                            <h5 class="mb-1">List group item heading</h5>
+                                                            <small class="text-muted">3 days ago</small>
+                                                        </div>
+                                                        <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                                        <small class="text-muted">And some muted small print.</small>
+                                                    </a>
+                                                    <a class="list-group-item list-group-item-action" href="#">
+                                                        <div class="d-flex w-100 justify-content-between">
+                                                            <h5 class="mb-1">List group item heading</h5>
+                                                            <small class="text-muted">3 days ago</small>
+                                                        </div>
+                                                        <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                                        <small class="text-muted">And some muted small print.</small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
+                                        <svg class="bi bi-x-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
+                                             width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
+                                                  fill-rule="evenodd"/>
+                                            <path d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
+                                                  fill-rule="evenodd"/>
+                                        </svg>
+                                        Close
+                                    </button>
+                                    <button class="btn btn-success" type="button">
+                                        <svg class="bi bi-download me-1" fill="currentColor" height="16"
+                                             viewBox="0 2 16 16"
+                                             width="16" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                        </svg>
+                                        Download
+                                    </button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img card-img-top"
-                             focusable="false" height="225" preserveAspectRatio="xMidYMid slice" role="img" width="100%"
-                             xmlns="http://www.w3.org/2000/svg"><title>Placeholder</title>
-                            <rect fill="#55595c" height="100%" width="100%"/>
-                            <text dy=".3em" fill="#eceeef" x="50%" y="50%">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">View</button>
-                                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
                             </div>
                         </div>
                     </div>
