@@ -10,6 +10,10 @@
     <link rel="icon" type="image/x-icon" href="favicon.png"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
 </head>
 
 <nav>
@@ -769,27 +773,4 @@
         <p class="mb-0"><small>CSE201 at Miami University, Spring 2022</small></p>
     </div>
 </footer>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation');
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-    })()
-</script>
 </html>
