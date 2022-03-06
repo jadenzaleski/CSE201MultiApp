@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <!-- metadata -->
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="" name="description">
     <meta content="Jaden Zaleski, Maoqing He, Drew Laikin, Ruoyu Xiang" name="author">
     <title>MultiApp - Home</title>
-
+    <!-- css links -->
     <link href="favicon.png" rel="icon" type="image/x-icon"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-
 </head>
-
+<!-- navbar with login and requests button -->
 <nav>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -24,8 +21,10 @@
                     <h4 class="text-white">Hello, name</h4>
                 </div>
                 <div class="col-4 my-3 ">
-                    <div aria-label="Basic example" class="btn-group me-auto float-end" role="group">
-                        <button class="btn btn-outline-light" data-bs-target="#exampleModal2" data-bs-toggle="modal"
+                    <!-- button group in navbar -->
+                    <div aria-label="navbar buttons" class="btn-group me-auto float-end" role="group">
+                        <!-- login button -->
+                        <button class="btn btn-outline-light" data-bs-target="#accountLoginModal" data-bs-toggle="modal"
                                 type="button">
                             <svg class="bi bi-person me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
                                  width="16" xmlns="http://www.w3.org/2000/svg">
@@ -33,31 +32,36 @@
                             </svg>
                             Login
                         </button>
-                        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
-                             id="exampleModal2"
+                        <!-- account login or create modal which has form in it -->
+                        <div aria-hidden="true" aria-labelledby="accountLoginModal" class="modal fade"
+                             id="accountLoginModal"
                              tabindex="-1">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
+                                    <!-- modal header -->
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel2">Account</h5>
+                                        <h5 class="modal-title" id="accountLoginModalLabel">Account</h5>
                                         <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
+                                    <!-- modal body -->
                                     <div class="modal-body">
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <h5>Login:</h5>
+                                                    <!-- login form -->
                                                     <form class="needs-validation" novalidate>
                                                         <div class="mb-1">
-                                                            <label class="form-label" for="exampleInputEmail3">Email
+                                                            <label class="form-label" for="emailLoginInput">Email
                                                                 address</label>
-                                                            <input class="form-control" id="exampleInputEmail3"
+                                                            <input class="form-control" id="emailLoginInput"
                                                                    required type="email">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label class="form-label" for="exampleInputPassword4">Password</label>
-                                                            <input class="form-control" id="exampleInputPassword4"
+                                                            <label class="form-label"
+                                                                   for="passwordLoginInput">Password</label>
+                                                            <input class="form-control" id="passwordLoginInput"
                                                                    required type="password">
                                                         </div>
                                                         <button class="btn btn-outline-primary w-100" type="submit">
@@ -67,6 +71,7 @@
                                                 </div>
                                                 <div class="col-6">
                                                     <h5>Create Account:</h5>
+                                                    <!-- create account form. makes sure passwords match-->
                                                     <form class="row needs-validation"
                                                           novalidate
                                                           oninput='p.setCustomValidity(cp.value !== p.value ? "Passwords do not match." : "")'>
@@ -110,6 +115,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- add app button-->
                         <button class="btn btn-outline-light" data-bs-target="#form" data-bs-toggle="modal"
                                 type="button">
                             <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
@@ -119,48 +125,52 @@
                             </svg>
                             Add App
                         </button>
-                        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="form"
+                        <!-- add app modal with form -->
+                        <div aria-hidden="true" aria-labelledby="addAppModal" class="modal fade" id="form"
                              tabindex="-1">
                             <div class="modal-dialog">
                                 <div class="modal-content">
+                                    <!-- modal header-->
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Add Application</h5>
+                                        <h5 class="modal-title" id="addAppModalLabel">Add Application</h5>
                                         <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
+                                    <!-- modal body-->
                                     <div class="modal-body">
                                         <form class="row g-3 needs-validation" novalidate>
                                             <div class="col-md-6">
-                                                <label class="form-label" for="validationCustom03">Application
+                                                <label class="form-label" for="applicationNameInput">Application
                                                     Name</label>
-                                                <input class="form-control" id="validationCustom03"
+                                                <input class="form-control" id="applicationNameInput"
                                                        placeholder="MultiApp"
                                                        required type="text">
                                             </div>
                                             <div class="col-md-6">
-                                                <label class="form-label" for="validationCustom04">Developer
+                                                <label class="form-label" for="devNameInput">Developer
                                                     Name</label>
-                                                <input class="form-control" id="validationCustom04"
+                                                <input class="form-control" id="devNameInput"
                                                        placeholder="Company"
                                                        required type="text">
                                             </div>
                                             <div class=" col-12 form-floating">
-                                                <textarea class="form-control" id="floatingTextarea2"
+                                                <textarea class="form-control" id="applicationDescription"
                                                           placeholder="Leave a comment here" required
                                                           style="height: 150px"></textarea>
-                                                <label for="floatingTextarea2">Description</label>
+                                                <label for="applicationDescription">Description</label>
                                             </div>
                                             <div class="col-12">
-                                                <label class="form-label" for="formFileSm">Upload Application
+                                                <label class="form-label" for="applicationImageInput">Upload Application
                                                     Image</label>
-                                                <input class="form-control form-control-sm" id="formFileSm" required
+                                                <input class="form-control form-control-sm" id="applicationImageInput"
+                                                       required
                                                        type="file">
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-check form-check-inline mt-2">
-                                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox"
+                                                    <input class="form-check-input" id="macCheckbox" type="checkbox"
                                                            value="option1">
-                                                    <label class="form-check-label" for="inlineCheckbox1">
+                                                    <label class="form-check-label" for="macCheckbox">
                                                         <svg class="bi bi-apple me-1"
                                                              fill="currentColor"
                                                              height="24" viewBox="0 3 16 16"
@@ -172,9 +182,9 @@
                                                         Mac</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox"
+                                                    <input class="form-check-input" id="windowsCheckbox" type="checkbox"
                                                            value="option2">
-                                                    <label class="form-check-label" for="inlineCheckbox2">
+                                                    <label class="form-check-label" for="windowsCheckbox">
                                                         <svg class="bi bi-windows me-2" fill="currentColor" height="20"
                                                              viewBox="0 2 16 16" width="16"
                                                              xmlns="http://www.w3.org/2000/svg">
@@ -184,8 +194,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <label class="form-label" for="validationCustom05">Version</label>
-                                                <input class="form-control" id="validationCustom05" placeholder="1.0.0"
+                                                <label class="form-label" for="applicationVersionInput">Version</label>
+                                                <input class="form-control" id="applicationVersionInput"
+                                                       placeholder="1.0.0"
                                                        required type="text">
                                             </div>
                                             <div class="col-12">
@@ -199,7 +210,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-outline-light rounded-end" data-bs-target="#requests" data-bs-toggle="modal"
+                        <!-- requests button -->
+                        <button class="btn btn-outline-light rounded-end" data-bs-target="#requests"
+                                data-bs-toggle="modal"
                                 type="button">
                             <svg class="bi bi-files me-1" fill="currentColor" height="20" viewBox="0 2 16 16"
                                  width="16" xmlns="http://www.w3.org/2000/svg">
@@ -207,17 +220,22 @@
                             </svg>
                             Requests
                         </button>
-                        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="requests"
+                        <!-- requests modal with form -->
+                        <div aria-hidden="true" aria-labelledby="requestsModal" class="modal fade" id="requests"
                              tabindex="-1">
                             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                                 <div class="modal-content">
+                                    <!-- modal header -->
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="eml">Requests</h5>
+                                        <h5 class="modal-title" id="requestsLabel">Requests</h5>
                                         <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
+                                    <!-- modal body -->
                                     <div class="modal-body">
+                                        <!-- list of requested app-->
                                         <ul class="list-group">
+                                            <!-- list element -->
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 <div class="container">
                                                     <div class="row">
@@ -225,7 +243,7 @@
                                                             <h5>Messenger</h5>
                                                         </div>
                                                         <div class="col-2">
-                                                            <div aria-label="Basic example" class="btn-group"
+                                                            <div aria-label="button Group" class="btn-group"
                                                                  role="group">
                                                                 <button class="btn btn-outline-success py-1"
                                                                         type="button">
@@ -248,7 +266,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4 text-center">
-                                                            <img alt="" class="shadow-lg" src="test.png" style="border-radius: 12%;"
+                                                            <img alt="" class="shadow-lg" src="test.png"
+                                                                 style="border-radius: 12%;"
                                                                  width="50%">
                                                         </div>
                                                         <div class="col-8">
@@ -312,7 +331,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4 text-center">
-                                                            <img alt="" class="shadow-lg" src="test.png" style="border-radius: 12%;"
+                                                            <img alt="" class="shadow-lg" src="test.png"
+                                                                 style="border-radius: 12%;"
                                                                  width="50%">
                                                         </div>
                                                         <div class="col-8">
@@ -376,7 +396,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4 text-center">
-                                                            <img alt="" class="shadow-lg" src="test.png" style="border-radius: 12%;"
+                                                            <img alt="" class="shadow-lg" src="test.png"
+                                                                 style="border-radius: 12%;"
                                                                  width="50%">
                                                         </div>
                                                         <div class="col-8">
@@ -440,7 +461,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-4 text-center">
-                                                            <img alt="" class="shadow-lg" src="test.png" style="border-radius: 12%;"
+                                                            <img alt="" class="shadow-lg" src="test.png"
+                                                                 style="border-radius: 12%;"
                                                                  width="50%">
                                                         </div>
                                                         <div class="col-8">
@@ -476,6 +498,7 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <!-- modal footer -->
                                     <div class="modal-footer">
                                         <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">Close
                                         </button>
@@ -488,8 +511,10 @@
             </div>
         </div>
     </div>
+    <!-- collapsed navbar -->
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
+            <!-- logo and name-->
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <svg class="bi bi-boxes me-1" fill="currentColor" height="24" viewBox="0 0 18 16"
                      width="24" xmlns="http://www.w3.org/2000/svg">
@@ -497,6 +522,7 @@
                 </svg>
                 <strong>MultiApp</strong>
             </a>
+            <!-- expand button-->
             <button aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-bs-target="#navbarHeader" data-bs-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
@@ -504,8 +530,9 @@
         </div>
     </div>
 </nav>
-
+<!-- main container with everything in it expect top navbar -->
 <main class="bg-light">
+    <!-- feature page-->
     <div class="container col-xl-10 col-xxl-8 px-4 py-1 bg-light mb-5">
         <div class="row align-items-center g-lg-5 py-4 text-center">
             <div class="col-lg-7 text-center text-lg-start">
@@ -520,7 +547,7 @@
 
         </div>
     </div>
-
+    <!-- navbar for album and items -->
     <nav aria-label="Album" class="navbar navbar-expand navbar-light bg-light">
         <div class="container" style="box-shadow: lightgray 0 15px 20px -15px;">
             <a class="navbar-brand" href=""><strong>Available Apps:</strong></a>
@@ -532,6 +559,7 @@
 
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
+                    <!-- sort dropdown -->
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                            href="#">
@@ -541,12 +569,13 @@
                                       fill-rule="evenodd"/>
                             </svg>
                             sort</a>
-                        <ul aria-labelledby="dropdown10" class="dropdown-menu">
+                        <!-- dropdown list -->
+                        <ul aria-labelledby="sort" class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">A-Z</a></li>
                             <li><a class="dropdown-item" href="#">Date Added</a></li>
                         </ul>
                     </li>
-
+                    <!-- filter dropdown -->
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                            href="#">
@@ -555,7 +584,8 @@
                                 <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
                             </svg>
                             filter</a>
-                        <ul aria-labelledby="dropdown10" class="dropdown-menu">
+                        <!-- dropdown list -->
+                        <ul aria-labelledby="filter" class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">
                                 <svg class="bi bi-apple me-2"
                                      fill="currentColor"
@@ -575,21 +605,24 @@
                         </ul>
                     </li>
                 </ul>
+                <!-- search bar -->
                 <form class="my-2">
                     <input aria-label="Search" class="form-control" placeholder="Search" type="text">
                 </form>
             </div>
         </div>
     </nav>
-
+    <!-- album of apps -->
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
+                    <!-- beginning of app which will need to be repeated for each app-->
+                    <!-- card for app-->
                     <div class="card shadow-sm">
                         <img alt="" class="card-img-top" height="225" role="img" src="test.png"
                              style="object-fit: contain;" width="225">
-
+                        <!-- card body -->
                         <div class="card-body">
                             <h2 class="card-title">Messenger</h2>
                             <p class="card-text"> Description of app. This is a wider card with supporting text below as
@@ -616,17 +649,19 @@
                             </div>
                         </div>
                     </div>
-
-                    <div aria-hidden="true" aria-labelledby="staticBackdropLabel"
+                    <!-- modal for card-->
+                    <div aria-hidden="true" aria-labelledby="modalCard"
                          class="modal fade modal-dialog-scrollable" data-bs-backdrop="static" data-bs-keyboard="false"
                          id="modalCard" tabindex="-1">
                         <div class="modal-dialog modal-xl">
                             <div class="modal-content">
+                                <!-- modal header-->
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="staticBackdropLabel">Messenger</h5>
                                     <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
                                             type="button"></button>
                                 </div>
+                                <!-- modal body -->
                                 <div class="modal-body p-4">
                                     <div class="container">
                                         <div class="row">
@@ -728,6 +763,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- modal footer -->
                                 <div class="modal-footer">
                                     <button class="btn btn-secondary" data-bs-dismiss="modal" type="button">
                                         <svg class="bi bi-x-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
@@ -752,14 +788,18 @@
                             </div>
                         </div>
                     </div>
-                    <div aria-hidden="true" aria-labelledby="comment" class="modal fade" id="addComment" tabindex="-1">
+                    <!-- modal for add comment for card -->
+                    <div aria-hidden="true" aria-labelledby="addComment" class="modal fade" id="addComment"
+                         tabindex="-1">
                         <div class="modal-dialog">
                             <div class="modal-content">
+                                <!-- modal header-->
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="ml">Add Comment</h5>
                                     <button class="btn-close" data-bs-target="#modalCard" data-bs-toggle="modal"
                                             type="button"></button>
                                 </div>
+                                <!-- modal body -->
                                 <div class="modal-body">
                                     <div class="form-floating">
                                         <textarea class="form-control" id="floatingTextarea4"
@@ -767,6 +807,7 @@
                                         <label for="floatingTextarea4">Comment</label>
                                     </div>
                                 </div>
+                                <!-- modal footer -->
                                 <div class="modal-footer">
                                     <button class="btn btn-secondary" data-bs-target="#modalCard" data-bs-toggle="modal"
                                             type="button">Close
@@ -778,13 +819,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end of 3 elements for app (card, info modal, add comment modal) -->
                 </div>
             </div>
         </div>
     </div>
-
 </main>
-
+<!-- footer -->
 <footer class="text-muted py-5">
     <div class="container">
         <p class="float-end mb-1 text-primary">
@@ -800,4 +841,8 @@
         <p class="mb-0"><small>CSE201 at Miami University, Spring 2022</small></p>
     </div>
 </footer>
+<!-- javascript -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/index.js"></script>
 </html>
