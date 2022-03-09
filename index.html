@@ -543,21 +543,20 @@
                 <a class="btn btn-success my-2 mb-4" href="#">Download</a>
                 <button class="btn btn-outline-secondary my-2 mb-4" data-bs-target="#messengerModalCard" data-bs-toggle="modal">View</button>
             </div>
-            <img alt="" class="col-md-10 mx-auto p-0 col-lg-5 shadow-lg p-5" src="images/messenger.png" style="border-radius: 12%;">
+            <img alt="" class="col-md-10 mx-auto p-0 col-lg-5 shadow-lg" src="images/messenger.png" style="border-radius: 12%;">
 
         </div>
     </div>
     <!-- navbar for album and items -->
-    <nav aria-label="Album" class="navbar navbar-expand navbar-light bg-light">
+    <nav aria-label="Album" class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container" style="box-shadow: lightgray 0 15px 20px -15px;">
-            <a class="navbar-brand" href=""><strong>Available Apps:</strong></a>
-            <button aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler"
-                    data-bs-target="#navbarsExample02" data-bs-toggle="collapse" type="button">
+            <h5 class="navbar-brand mt-2" href=""><strong>Available Apps:</strong></h5>
+
+            <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#albumNav" aria-controls="albumNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end">
+            <div class="collapse navbar-collapse justify-content-end" id="albumNav">
                 <ul class="navbar-nav">
                     <!-- sort dropdown -->
                     <li class="nav-item dropdown">
@@ -622,7 +621,7 @@
                     <!-- card for app-->
                     <div class="card shadow-sm">
                         <!-- images must be 1024x1024 -->
-                        <img alt="" class="card-img-top p-3" height="225" role="img" src="images/messenger.png"
+                        <img alt="" class="card-img-top p-3" height="225" role="img" src="images/facebook.png"
                              style="object-fit: contain;" width="225">
                         <!-- card body -->
                         <div class="card-body">
@@ -668,7 +667,7 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg">
-                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 p-3" src="images/messenger.png"
+                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 " src="images/facebook.png"
                                                      style="border-radius: 12%;">
                                                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                     sed
