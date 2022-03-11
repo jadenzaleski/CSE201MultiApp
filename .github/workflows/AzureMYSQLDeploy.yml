@@ -1,4 +1,21 @@
 - name: Azure MYSQL Deploy
+
+  on:
+push:
+    branches: #
+pull_request: #
+    branches: #
+
+
+jobs:
+build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: azure/login@v1
+    with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
   uses: Azure/mysql@v1
   with:
     # Server name of Azure DB for Mysql. When you connect using Mysql Workbench, this is the same value that is used for Hostname in Parameters
@@ -12,6 +29,12 @@
     # Azure MySQL Server database (optional) to connect to. No database will be used automatically.
     database: # optional
     # Path to SQL script file to deploy
+    dacpac-package: './Database.dacpac'
+    # 
     sql-file: 
     # Additional options supported by mysql simple SQL shell. These options will be applied when executing the given file on the Azure DB for Mysql.
-    arguments: # optional
+    
+    # Azure logout 
+- name: logout
+  run: |
+     az logout
