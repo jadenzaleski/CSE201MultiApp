@@ -1,0 +1,17 @@
+- name: Azure MYSQL Deploy
+  uses: Azure/mysql@v1
+  with:
+    # Server name of Azure DB for Mysql. When you connect using Mysql Workbench, this is the same value that is used for Hostname in Parameters
+    server-name: cse201group5.database.windows.net
+    # The connection string, including authentication information, for the Azure MySQL Server. (deprecated)
+    connection-string: '${{ secrets.AZURE_SQL_CONNECTION_STRING }}'
+    # Azure MySQL Server username for login
+    username: cse201	
+    # Azure MySQL Server password for login
+    password: group5201!
+    # Azure MySQL Server database (optional) to connect to. No database will be used automatically.
+    database: # optional
+    # Path to SQL script file to deploy
+    sql-file: 
+    # Additional options supported by mysql simple SQL shell. These options will be applied when executing the given file on the Azure DB for Mysql.
+    arguments: # optional
