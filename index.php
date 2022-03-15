@@ -10,10 +10,10 @@
     <!-- css links -->
     <link href="images/favicon.png" rel="icon" type="image/x-icon"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- php links -->
+    <?php include 'config.php'; ?>
 
 </head>
-<!-- php links -->
-<?php require 'config.php'; ?>
 <!-- navbar with login and requests button -->
 <nav>
     <div class="collapse bg-dark" id="navbarHeader">
@@ -543,9 +543,12 @@
                     required form group has a validation state that can be triggered by attempting to submit the form
                     without completing it.</p>
                 <a class="btn btn-success my-2 mb-4" href="#">Download</a>
-                <button class="btn btn-outline-secondary my-2 mb-4" data-bs-target="#messengerModalCard" data-bs-toggle="modal">View</button>
+                <button class="btn btn-outline-secondary my-2 mb-4" data-bs-target="#messengerModalCard"
+                        data-bs-toggle="modal">View
+                </button>
             </div>
-            <img alt="" class="col-md-10 mx-auto p-0 col-lg-5 shadow-lg" src="images/messenger.png" style="border-radius: 12%;">
+            <img alt="" class="col-md-10 mx-auto p-0 col-lg-5 shadow-lg" src="images/messenger.png"
+                 style="border-radius: 12%;">
 
         </div>
     </div>
@@ -554,7 +557,8 @@
         <div class="container" style="box-shadow: lightgray 0 15px 20px -15px;">
             <h5 class="navbar-brand mt-2" href=""><strong>Available Apps:</strong></h5>
 
-            <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#albumNav" aria-controls="albumNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler m-1" type="button" data-bs-toggle="collapse" data-bs-target="#albumNav"
+                    aria-controls="albumNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -640,7 +644,8 @@
                                             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                                         </svg>
                                     </button>
-                                    <button class="btn btn-sm btn-outline-secondary" data-bs-target="#messengerModalCard"
+                                    <button class="btn btn-sm btn-outline-secondary"
+                                            data-bs-target="#messengerModalCard"
                                             data-bs-toggle="modal" type="button">
                                         <svg class="bi bi-info-lg" fill="currentColor" height="16" viewBox="0 1 16 16"
                                              width="16" xmlns="http://www.w3.org/2000/svg">
@@ -669,7 +674,8 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg">
-                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 " src="images/messenger.png"
+                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 "
+                                                     src="images/messenger.png"
                                                      style="border-radius: 12%;">
                                                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                     sed do
@@ -703,7 +709,8 @@
                                                 <ul class="list-group">
                                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <button class="btn btn-outline-green w-100 me-auto text-primary"
-                                                                data-bs-target="#messengerAddComment" data-bs-toggle="modal"
+                                                                data-bs-target="#messengerAddComment"
+                                                                data-bs-toggle="modal"
                                                                 type="button">
                                                             <svg class="bi bi-plus-circle me-1" fill="currentColor"
                                                                  height="26" viewBox="0 1 16 16"
@@ -811,10 +818,12 @@
                                 </div>
                                 <!-- modal footer -->
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" data-bs-target="#messengerModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-secondary" data-bs-target="#messengerModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Close
                                     </button>
-                                    <button class="btn btn-primary" data-bs-target="#messengerModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-primary" data-bs-target="#messengerModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Post
                                     </button>
                                 </div>
@@ -845,7 +854,8 @@
                                             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                                         </svg>
                                     </button>
-                                    <button class="btn btn-sm btn-outline-secondary" data-bs-target="#instagramModalCard"
+                                    <button class="btn btn-sm btn-outline-secondary"
+                                            data-bs-target="#instagramModalCard"
                                             data-bs-toggle="modal" type="button">
                                         <svg class="bi bi-info-lg" fill="currentColor" height="16" viewBox="0 1 16 16"
                                              width="16" xmlns="http://www.w3.org/2000/svg">
@@ -874,7 +884,8 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg">
-                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 bg-white" src="images/instagram.png"
+                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 bg-white"
+                                                     src="images/instagram.png"
                                                      style="border-radius: 12%;">
                                                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                     sed
@@ -909,7 +920,8 @@
                                                 <ul class="list-group">
                                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <button class="btn btn-outline-green w-100 me-auto text-primary"
-                                                                data-bs-target="#instagramAddComment" data-bs-toggle="modal"
+                                                                data-bs-target="#instagramAddComment"
+                                                                data-bs-toggle="modal"
                                                                 type="button">
                                                             <svg class="bi bi-plus-circle me-1" fill="currentColor"
                                                                  height="26" viewBox="0 1 16 16"
@@ -1017,10 +1029,12 @@
                                 </div>
                                 <!-- modal footer -->
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" data-bs-target="#instagramModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-secondary" data-bs-target="#instagramModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Close
                                     </button>
-                                    <button class="btn btn-primary" data-bs-target="#instagramModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-primary" data-bs-target="#instagramModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Post
                                     </button>
                                 </div>
@@ -1080,7 +1094,8 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg">
-                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 bg-white" src="images/spotify.png"
+                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 bg-white"
+                                                     src="images/spotify.png"
                                                      style="border-radius: 12%;">
                                                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                     sed
@@ -1115,7 +1130,8 @@
                                                 <ul class="list-group">
                                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <button class="btn btn-outline-green w-100 me-auto text-primary"
-                                                                data-bs-target="#spotifyAddComment" data-bs-toggle="modal"
+                                                                data-bs-target="#spotifyAddComment"
+                                                                data-bs-toggle="modal"
                                                                 type="button">
                                                             <svg class="bi bi-plus-circle me-1" fill="currentColor"
                                                                  height="26" viewBox="0 1 16 16"
@@ -1223,10 +1239,12 @@
                                 </div>
                                 <!-- modal footer -->
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" data-bs-target="#spotifyModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-secondary" data-bs-target="#spotifyModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Close
                                     </button>
-                                    <button class="btn btn-primary" data-bs-target="#spotifyModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-primary" data-bs-target="#spotifyModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Post
                                     </button>
                                 </div>
@@ -1286,7 +1304,8 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg">
-                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 bg-white" src="images/facebook.png"
+                                                <img alt="..." class="mx-auto d-block shadow-lg w-25 bg-white"
+                                                     src="images/facebook.png"
                                                      style="border-radius: 12%;">
                                                 <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                     sed
@@ -1321,7 +1340,8 @@
                                                 <ul class="list-group">
                                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <button class="btn btn-outline-green w-100 me-auto text-primary"
-                                                                data-bs-target="#facebookAddComment" data-bs-toggle="modal"
+                                                                data-bs-target="#facebookAddComment"
+                                                                data-bs-toggle="modal"
                                                                 type="button">
                                                             <svg class="bi bi-plus-circle me-1" fill="currentColor"
                                                                  height="26" viewBox="0 1 16 16"
@@ -1429,10 +1449,12 @@
                                 </div>
                                 <!-- modal footer -->
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" data-bs-target="#facebookModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-secondary" data-bs-target="#facebookModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Close
                                     </button>
-                                    <button class="btn btn-primary" data-bs-target="#facebookModalCard" data-bs-toggle="modal"
+                                    <button class="btn btn-primary" data-bs-target="#facebookModalCard"
+                                            data-bs-toggle="modal"
                                             type="button">Post
                                     </button>
                                 </div>
