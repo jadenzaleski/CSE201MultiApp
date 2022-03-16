@@ -13,6 +13,11 @@
     <!-- php links -->
     <?php include 'config.php'; ?>
 
+    <!-- javascript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
 </head>
 <!-- navbar with login and requests button -->
 <nav>
@@ -1483,8 +1488,4 @@
         <p class="mb-0"><small>CSE201 at Miami University, Spring 2022</small></p>
     </div>
 </footer>
-<!-- javascript -->
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="js/index.js"></script>
 </html>

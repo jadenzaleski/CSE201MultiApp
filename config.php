@@ -20,6 +20,6 @@ if (!$result) {
 }
 $row = mysqli_fetch_row($result);
 
-echo $row[0] . " "; // 42
+echo $row[0] . " "; // id
 echo $row[1]; // the email value
 $conn->close();
