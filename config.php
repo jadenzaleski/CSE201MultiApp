@@ -1,7 +1,14 @@
 <?php
+
 $servername = "cse201db.cwqs6801klds.us-east-1.rds.amazonaws.com";
 $username = "admin";
 $password = "jadenzaleski";
+
+if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+    echo 'We don\'t have mysqli!!! ';
+} else {
+    echo 'Phew we have it! ';
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
