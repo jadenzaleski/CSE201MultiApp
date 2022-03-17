@@ -1,9 +1,13 @@
 <?php
 
+// drew https://stackoverflow.com/questions/29503723/class-mysqli-not-found-php-v5-6-7
+// https://stackoverflow.com/questions/34249053/cannot-find-mysqli-class-in-php7-installation-on-windows
+
 $servername = "cse201db.cwqs6801klds.us-east-1.rds.amazonaws.com";
 $username = "admin";
 $password = "jadenzaleski";
 
+// if sqli exists
 if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
     echo 'We don\'t have mysqli!!! ';
 } else {
@@ -11,22 +15,16 @@ if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
 }
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+//$link = new mysqli($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password);
 
+// Check connection
+if($conn === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully\n";
 
-$sql = "SELECT id, username, password FROM Data";
-$result = mysqli_query($conn,"SELECT id,username FROM Data.users");
-if (!$result) {
-    echo 'Could not run query: ' . mysqli_error($conn);
-    exit;
-}
-$row = mysqli_fetch_row($result);
-
-echo $row[0] . " "; // id
-echo $row[1]; // the email value
-$conn->close();

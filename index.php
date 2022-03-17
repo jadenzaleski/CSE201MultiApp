@@ -8,11 +8,8 @@
     <meta content="Jaden Zaleski, Maoqing He, Drew Laikin, Ruoyu Xiang" name="author">
     <title>MultiApp - Home</title>
     <!-- css links -->
-    <link href="images/favicon.png" rel="icon" type="image/x-icon"/>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- php links -->
-    <?php include 'config.php'; ?>
-
     <!-- javascript -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -58,7 +55,7 @@
                                                 <div class="col-6">
                                                     <h5>Login:</h5>
                                                     <!-- login form -->
-                                                    <form class="needs-validation" novalidate>
+                                                    <form class="needs-validation">
                                                         <div class="mb-1">
                                                             <label class="form-label" for="emailLoginInput">Email
                                                                 address</label>
@@ -79,27 +76,25 @@
                                                 <div class="col-6">
                                                     <h5>Create Account:</h5>
                                                     <!-- create account form. makes sure passwords match-->
-                                                    <form class="row needs-validation"
-                                                          novalidate
-                                                          oninput='p.setCustomValidity(cp.value !== p.value ? "Passwords do not match." : "")'>
+                                                    <form class="row needs-validation" method="post" action="registration.php"
+                                                          oninput='p.setCustomValidity(cp.value !== p.value ? "Passwords do not match" : "")'>
                                                         <div class="col-6">
                                                             <label class="form-label" for="fn">First Name</label>
-                                                            <input class="form-control" id="fn" required type="text">
+                                                            <input class="form-control" id="fn" required type="text" name="registrationFirst">
                                                         </div>
                                                         <div class="col-6">
                                                             <label class="form-label" for="ln">Last Name</label>
-                                                            <input class="form-control" id="ln" required type="text">
+                                                            <input class="form-control" id="ln" required type="text" name="registrationLast">
                                                         </div>
                                                         <div class="col-12 mt-1">
-                                                            <label class="form-label" for="exampleInputEmail1">Email
-                                                                address</label>
-                                                            <input class="form-control" id="exampleInputEmail1"
-                                                                   required type="email">
+                                                            <label class="form-label" for="UsernameInputReg">Username</label>
+                                                            <input class="form-control" id="UsernameInputReg" name="registrationUsername"
+                                                                   required type="text">
                                                         </div>
                                                         <div class="col-12 mt-1">
                                                             <label class="form-label" for="exampleInputPassword1">Password</label>
                                                             <input class="form-control" id="exampleInputPassword1"
-                                                                   name="p" required type="password">
+                                                                   name="registrationPassword" required type="password">
                                                             <div class="invalid-feedback">
                                                                 Provide matching passwords.
                                                             </div>
@@ -110,7 +105,7 @@
                                                                    required type="password">
                                                         </div>
                                                         <div class="col-12">
-                                                            <button class="btn btn-outline-primary w-100" type="submit">
+                                                            <button class="btn btn-outline-primary w-100" name="submit" type="submit">
                                                                 Submit
                                                             </button>
                                                         </div>
@@ -145,7 +140,7 @@
                                     </div>
                                     <!-- modal body-->
                                     <div class="modal-body">
-                                        <form class="row g-3 needs-validation" novalidate>
+                                        <form class="row g-3 needs-validation">
                                             <div class="col-md-6">
                                                 <label class="form-label" for="applicationNameInput">Application
                                                     Name</label>
@@ -597,21 +592,21 @@
                         <!-- dropdown list -->
                         <ul aria-labelledby="filter" class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">
-                                <svg class="bi bi-apple me-2"
-                                     fill="currentColor"
-                                     height="24" viewBox="0 3 16 16"
-                                     width="16"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
-                                    <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
-                                </svg>
-                                Mac</a></li>
+                                    <svg class="bi bi-apple me-2"
+                                         fill="currentColor"
+                                         height="24" viewBox="0 3 16 16"
+                                         width="16"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                                        <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
+                                    </svg>
+                                    Mac</a></li>
                             <li><a class="dropdown-item" href="#">
-                                <svg class="bi bi-windows me-2" fill="currentColor" height="20"
-                                     viewBox="0 2 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
-                                </svg>
-                                Windows</a></li>
+                                    <svg class="bi bi-windows me-2" fill="currentColor" height="20"
+                                         viewBox="0 2 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
+                                    </svg>
+                                    Windows</a></li>
                         </ul>
                     </li>
                 </ul>
