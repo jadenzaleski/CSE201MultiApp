@@ -1,3 +1,7 @@
+<?php
+session_set_cookie_params(0);
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -14,31 +18,58 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
-
 </head>
-<!-- navbar with login and requests button -->
+<!-- navbar with login add app and requests button -->
 <nav>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
                 <div class="col-8 my-3">
-                    <h4 class="text-white">Hello, name</h4>
+                    <?php
+                    if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+                        ?>
+                        <h4 class="text-white">
+                            Hello, <?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName']; ?></h4>
+                        <?php
+                    } else {
+                        ?>
+                        <h4 class="text-white">Hello, please log in.</h4>
+                        <?php
+                    }
+                    ?>
                 </div>
                 <div class="col-4 my-3 ">
                     <!-- button group in navbar -->
                     <div aria-label="navbar buttons" class="btn-group me-auto float-end" role="group">
-                        <!-- login button -->
-                        <button class="btn btn-outline-light" data-bs-target="#accountLoginModal" data-bs-toggle="modal"
-                                type="button">
-                            <svg class="bi bi-person me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
-                                 width="16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                            </svg>
-                            Login
-                        </button>
+                        <!-- login/logout button -->
+                        <?php
+                        if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+                            ?>
+                            <button class="btn btn-outline-light" id="logout"
+                                    type="button">
+                                <svg class="bi bi-person me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
+                                     width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                </svg>
+                                Logout
+                            </button>
+                            <?php
+                        } else {
+                            ?>
+                            <button class="btn btn-outline-light" data-bs-target="#accountModal" data-bs-toggle="modal"
+                                    type="button" id="navLoginButton">
+                                <svg class="bi bi-person me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
+                                     width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                </svg>
+                                Login
+                            </button>
+                            <?php
+                        }
+                        ?>
                         <!-- account login or create modal which has form in it -->
-                        <div aria-hidden="true" aria-labelledby="accountLoginModal" class="modal fade"
-                             id="accountLoginModal"
+                        <div aria-hidden="true" aria-labelledby="accountModal" class="modal fade"
+                             id="accountModal"
                              tabindex="-1">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -55,20 +86,22 @@
                                                 <div class="col-6">
                                                     <h5>Login:</h5>
                                                     <!-- login form -->
-                                                    <form class="needs-validation">
+                                                    <form class="needs-validation" id="loginForm">
                                                         <div class="mb-1">
-                                                            <label class="form-label" for="emailLoginInput">Email
-                                                                address</label>
-                                                            <input class="form-control" id="emailLoginInput"
-                                                                   required type="email">
+                                                            <label class="form-label"
+                                                                   for="usernameLoginInput">Username</label>
+                                                            <input class="form-control" id="usernameLoginInput"
+                                                                   name="usernameLoginInput"
+                                                                   required type="text">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label class="form-label"
                                                                    for="passwordLoginInput">Password</label>
                                                             <input class="form-control" id="passwordLoginInput"
-                                                                   required type="password">
+                                                                   required type="password" name="passwordLoginInput">
                                                         </div>
-                                                        <button class="btn btn-outline-primary w-100" type="submit">
+                                                        <button class="btn btn-outline-primary w-100" type="button"
+                                                                name="loginButton" id="loginButton">
                                                             Submit
                                                         </button>
                                                     </form>
@@ -76,36 +109,41 @@
                                                 <div class="col-6">
                                                     <h5>Create Account:</h5>
                                                     <!-- create account form. makes sure passwords match-->
-                                                    <form class="row needs-validation" method="post" action="registration.php"
-                                                          oninput='p.setCustomValidity(cp.value !== p.value ? "Passwords do not match" : "")'>
+                                                    <form class="row needs-validation"
+                                                          method="post" id="createAccountForm">
                                                         <div class="col-6">
                                                             <label class="form-label" for="fn">First Name</label>
-                                                            <input class="form-control" id="fn" required type="text" name="registrationFirst">
+                                                            <input class="form-control" id="fn" type="text"
+                                                                   name="registrationFirst" required>
                                                         </div>
                                                         <div class="col-6">
                                                             <label class="form-label" for="ln">Last Name</label>
-                                                            <input class="form-control" id="ln" required type="text" name="registrationLast">
+                                                            <input class="form-control" id="ln" required type="text"
+                                                                   name="registrationLast">
                                                         </div>
                                                         <div class="col-12 mt-1">
-                                                            <label class="form-label" for="UsernameInputReg">Username</label>
-                                                            <input class="form-control" id="UsernameInputReg" name="registrationUsername"
+                                                            <label class="form-label"
+                                                                   for="registrationUsername">Username</label>
+                                                            <input class="form-control" id="registrationUsername"
+                                                                   name="registrationUsername"
                                                                    required type="text">
                                                         </div>
                                                         <div class="col-12 mt-1">
-                                                            <label class="form-label" for="exampleInputPassword1">Password</label>
-                                                            <input class="form-control" id="exampleInputPassword1"
+                                                            <label class="form-label"
+                                                                   for="registrationPassword">Password</label>
+                                                            <input class="form-control" id="registrationPassword"
                                                                    name="registrationPassword" required type="password">
-                                                            <div class="invalid-feedback">
-                                                                Provide matching passwords.
-                                                            </div>
                                                         </div>
                                                         <div class="col-12 mt-1 mb-3">
-                                                            <label class="form-label" for="cp">Confirm Password</label>
-                                                            <input class="form-control" id="cp" name="cp"
+                                                            <label class="form-label" for="confirmRegistrationPassword">Confirm
+                                                                Password</label>
+                                                            <input class="form-control" id="confirmRegistrationPassword"
+                                                                   name="confirmRegistrationPassword"
                                                                    required type="password">
                                                         </div>
                                                         <div class="col-12">
-                                                            <button class="btn btn-outline-primary w-100" name="submit" type="submit">
+                                                            <button class="btn btn-outline-primary w-100"
+                                                                    name="registrationSubmitButton" id="registrationSubmitButton" type="button">
                                                                 Submit
                                                             </button>
                                                         </div>
@@ -118,8 +156,11 @@
                             </div>
                         </div>
                         <!-- add app button-->
+                        <?php
+                        if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
+                        ?>
                         <button class="btn btn-outline-light" data-bs-target="#form" data-bs-toggle="modal"
-                                type="button">
+                                type="button" id="addAppButton">
                             <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
                                  width="16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
@@ -127,6 +168,17 @@
                             </svg>
                             Add App
                         </button>
+                        <?php
+                        } else {
+                        ?>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#navLoginButton').addClass("rounded-end");
+                                });
+                            </script>
+                        <?php
+                        }
+                        ?>
                         <!-- add app modal with form -->
                         <div aria-hidden="true" aria-labelledby="addAppModal" class="modal fade" id="form"
                              tabindex="-1">
@@ -213,15 +265,29 @@
                             </div>
                         </div>
                         <!-- requests button -->
-                        <button class="btn btn-outline-light rounded-end" data-bs-target="#requests"
-                                data-bs-toggle="modal"
-                                type="button">
-                            <svg class="bi bi-files me-1" fill="currentColor" height="20" viewBox="0 2 16 16"
-                                 width="16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
-                            </svg>
-                            Requests
-                        </button>
+                        <?php
+                        if (isset($_SESSION['level']) && $_SESSION['level'] == 2) {
+                            ?>
+                            <button class="btn btn-outline-light rounded-end" data-bs-target="#requests"
+                                    data-bs-toggle="modal"
+                                    type="button" id="requestsButton">
+                                <svg class="bi bi-files me-1" fill="currentColor" height="20" viewBox="0 2 16 16"
+                                     width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+                                </svg>
+                                Requests
+                            </button>
+                            <?php
+                        } else {
+                            ?>
+                            <script>
+                                $(document).ready(function () {
+                                    $('#addAppButton').addClass("rounded-end");
+                                });
+                            </script>
+                            <?php
+                        }
+                        ?>
                         <!-- requests modal with form -->
                         <div aria-hidden="true" aria-labelledby="requestsModal" class="modal fade" id="requests"
                              tabindex="-1">

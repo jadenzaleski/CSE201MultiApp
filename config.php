@@ -8,23 +8,23 @@ $username = "admin";
 $password = "jadenzaleski";
 
 // if sqli exists
-if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
-    echo 'We don\'t have mysqli!!! ';
-} else {
-    echo 'Phew we have it! ';
-}
+//if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+//    echo 'We don\'t have mysqli!!! ';
+//} else {
+//    echo 'Phew we have it! ';
+//}
 
 // Create connection
 //$link = new mysqli($servername, $username, $password);
-$conn = mysqli_connect($servername, $username, $password);
+$connect = mysqli_connect($servername, $username, $password);
 
 // Check connection
-if($conn === false){
+if($connect === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($connect->connect_error) {
+    die("Connection failed: " . $connect->connect_error);
 }
-echo "Connected successfully\n";
+//echo "Connected successfully\n ";
 
