@@ -208,6 +208,12 @@ session_start();
                                                        required type="text">
                                             </div>
                                             <div class=" col-12 form-floating">
+                                                <textarea class="form-control" id="shortApplicationDescription"
+                                                          placeholder="Leave a comment here" required
+                                                          style="height: 100px"></textarea>
+                                                <label for="shortApplicationDescription">Short Description</label>
+                                            </div>
+                                            <div class=" col-12 form-floating">
                                                 <textarea class="form-control" id="applicationDescription"
                                                           placeholder="Leave a comment here" required
                                                           style="height: 150px"></textarea>
