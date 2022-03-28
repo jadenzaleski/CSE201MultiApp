@@ -250,7 +250,7 @@ session_start();
                                             <div class="col-6">
                                                 <label class="form-label" for="applicationVersionInput">Version</label>
                                                 <input class="form-control" id="applicationVersionInput"
-                                                       placeholder="1.0.0"
+                                                       placeholder="1.0"
                                                        required type="text">
                                             </div>
                                             <div class="col-12">
