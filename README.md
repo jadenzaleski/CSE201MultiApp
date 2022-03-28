@@ -8,3 +8,8 @@
 |   Admin   |   User   |   admin   | admin123 |   2   |
 |    Mod    |   User   | moderator | mod12345 |   1   |
 |   Guest   |   User   |   guest   | guest123 |   0   |
+
+----
+
+### DB:
+cse201db.cwqs6801klds.us-east-1.rds.amazonaws.com
