@@ -97,6 +97,35 @@ $(document).ready(function () {
             $('#createAccountForm').toggleClass("was-validated");
         }
     });
-
+    $('#submit').click(function () {
+        var appName = $('#applicationNameInput').val();
+        var devName = $('#devNameInput').val();
+        var descrip = $('#applicationDescription').val();
+        var version = $('#applicationVersionInput').val();
+        var mac = $('macCheckbox').val();
+        var windows = $('windowsCheckbox').val();
+        var image = $('applicationImageInput').val();
+        var confirmPassword = $('#confirmRegistrationPassword').val();
+        if (fn != '' && ln != '' && username != '' && password != '' && confirmPassword != '') {
+            if (checkPassword(password, confirmPassword)) {
+                $.ajax({
+                    url: "createAccount.php",
+                    method: "POST",
+                    data: {firstName: firstName, lastName: lastName, username: username, password: password, level: 0},
+                    success: function (data) {
+                        if (data == 'Yes') {
+                            $('#accountModal').hide();
+                            location.reload();
+                            // alert("success");
+                        } else {
+                            alert(data);
+                        }
+                    }
+                });
+            }
+        } else {
+            $('#createAccountForm').toggleClass("was-validated");
+        }
+    });
 
 });
