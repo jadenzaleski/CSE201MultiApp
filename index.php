@@ -345,7 +345,16 @@ session_start();
                                                                  width="50%">
                                                         </div>
                                                         <div class="col-8">
-                                                            <p>Below is an example form built entirely with Bootstrap’s
+                                                            <h6 class="mb-0">Short Description:</h6>
+                                                            <p>SHORT - Below is an example form built entirely with Bootstrap’s
+                                                                form controls. Each
+                                                                required form group has a validation state that can be
+                                                                triggered by attempting to submit the form
+                                                                without completing it.</p>
+                                                        </div>
+                                                        <div class="col-12 mt-1">
+                                                            <h6 class="mb-0">Description:</h6>
+                                                            <p> MAIN - Below is an example form built entirely with Bootstrap’s
                                                                 form controls. Each
                                                                 required form group has a validation state that can be
                                                                 triggered by attempting to submit the form
