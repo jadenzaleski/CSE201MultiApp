@@ -105,13 +105,10 @@ $(document).ready(function () {
         var mac = $('macCheckbox').val();
         var windows = $('windowsCheckbox').val();
         var image = $('applicationImageInput').val();
-        var confirmPassword = $('#confirmRegistrationPassword').val();
-        if (fn != '' && ln != '' && username != '' && password != '' && confirmPassword != '') {
-            if (checkPassword(password, confirmPassword)) {
-                $.ajax({
-                    url: "createAccount.php",
-                    method: "POST",
-                    data: {firstName: firstName, lastName: lastName, username: username, password: password, level: 0},
+        $.ajax({
+            url: "addApp.php",
+            method: "POST",
+            data: {appName: devName, descrip: version, mac: windows, image},
                     success: function (data) {
                         if (data == 'Yes') {
                             $('#accountModal').hide();
@@ -127,5 +124,4 @@ $(document).ready(function () {
             $('#createAccountForm').toggleClass("was-validated");
         }
     });
-
 });
