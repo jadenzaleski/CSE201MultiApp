@@ -162,6 +162,7 @@ $(document).ready(function () {
     $('#submit').click(function () {
         var appName = $('#applicationNameInput').val();
         var devName = $('#devNameInput').val();
+
         var descrip = $('#applicationDescription').val();
         var version = $('#applicationVersionInput').val();
         var mac = $('macCheckbox').val();
