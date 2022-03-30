@@ -619,22 +619,8 @@ session_start();
 <!-- main container with everything in it expect top navbar -->
 <main class="bg-light">
     <!-- feature page-->
-    <div class="container col-xl-10 col-xxl-8 px-4 py-1 bg-light mb-5">
-        <div class="row align-items-center g-lg-5 py-4 text-center">
-            <div class="col-lg-7 text-center text-lg-start">
-                <h1 class="display-4 fw-bold lh-1 mb-3">Messenger</h1>
-                <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each
-                    required form group has a validation state that can be triggered by attempting to submit the form
-                    without completing it.</p>
-                <a class="btn btn-success my-2 mb-4" href="#">Download</a>
-                <button class="btn btn-outline-secondary my-2 mb-4" data-bs-target="#messengerModalCard"
-                        data-bs-toggle="modal">View
-                </button>
-            </div>
-            <img alt="" class="col-md-10 mx-auto p-0 col-lg-5 shadow-lg" src="images/messenger.png"
-                 style="border-radius: 12%;">
-
-        </div>
+    <div class="container col-xl-10 col-xxl-8 px-4 py-1 bg-light mb-5" id="feature">
+        <!-- php showFeatureApp script here-->
     </div>
     <!-- navbar for album and items -->
     <nav aria-label="Album" class="navbar navbar-expand-sm navbar-light bg-light">
@@ -708,7 +694,7 @@ session_start();
             <!--                <li class="list-group-item d-flex justify-content-between align-items-start">-->
             <!--                    <div class="ms-2 me-auto">-->
             <!--                        <div class="fw-bold">Jaden Zaleski</div>-->
-            <!--                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur-->
+            <!--                        <p class="ms-4 w-100 fw-light">Lorem ipsum dolor sit amet, consectetur-->
             <!--                            adipiscing elit, sed do eiusmod tempor incididunt ut-->
             <!--                            labore et dolore magna aliqua. Ut enim ad minim veniam,-->
             <!--                            quis nostrud exercitation ullamco laboris nisi ut-->

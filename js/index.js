@@ -65,7 +65,22 @@ function showApps() {
             alert('ajax show apps error: ' + result);
         }
     })
+}
 
+function showFeatureApp() {
+    $.ajax({
+        url: "showFeatureApp.php",
+        method: "GET",
+        data: {},
+        success: function (data) {
+            $('#feature').html(data);
+            // alert('ajax worked');
+
+        },
+        error: function (result) {
+            alert('ajax show feature app error: ' + result);
+        }
+    })
 }
 
 /**
@@ -78,6 +93,7 @@ function showApps() {
 $(document).ready(function () {
 
     showApps();
+    showFeatureApp();
 
     $('#loginButton').click(function () {
         const username = $('#usernameLoginInput').val();
