@@ -1,3 +1,9 @@
+/**
+ * Main javascript file for all custom code.
+ * For creating documentation use:
+ * @link https://jsdoc.app/index.html
+ */
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
@@ -19,6 +25,13 @@
         })
 })()
 
+/**
+ * @name checkPassword
+ * @description Check to see if passwords match.
+ * @param {string} p - password.
+ * @param {string} cp - confirm password.
+ * @returns {boolean} - true if passwords match and false if not.
+ */
 function checkPassword(p, cp) {
 
     // If Not same return False.
@@ -33,37 +46,50 @@ function checkPassword(p, cp) {
     }
 }
 
+/**
+ * @name showApps
+ * @description shows all apps in default order with ajax.
+ * @return void
+ */
 function showApps() {
     $.ajax({
         url: "showApps.php",
-        type: "POST",
+        method: "GET",
+        data: {},
         success: function (data) {
-            $('#album').innerHTML.replaceWith(data);
-            alert(data);
+            $('#album').html(data);
+            // alert('ajax worked');
+
+        },
+        error: function (result) {
+            alert('ajax show apps error: ' + result);
         }
     })
+
 }
 
-// to enable it for your editor do this:
-// in Settings | Languages & Frameworks | JavaScript | Libraries,
-// check jquery and click ok.
-// beginning of JQUERY
+/**
+ * To enable jquery for your editor do this:
+ * -> Settings -> Languages & Frameworks -> JavaScript -> Libraries,
+ * check jquery and click ok.
+ *
+ * Beginning of JQUERY
+ */
 $(document).ready(function () {
 
     showApps();
 
     $('#loginButton').click(function () {
-        showApps();
-        var username = $('#usernameLoginInput').val();
-        var password = $('#passwordLoginInput').val();
-        if (username != '' && password != '') {
+        const username = $('#usernameLoginInput').val();
+        const password = $('#passwordLoginInput').val();
+        if (username !== '' && password !== '') {
             $.ajax({
                 url: "login.php",
                 method: "POST",
                 data: {username: username, password: password},
                 success: function (data) {
                     // alert(data);
-                    if (data == 'No') {
+                    if (data === 'No') {
                         alert("The username or password is incorrect or does not exist.");
                     } else {
                         $('#accountModal').hide();
@@ -78,7 +104,7 @@ $(document).ready(function () {
     });
 
     $('#logout').click(function () {
-        var action = "logout";
+        const action = "logout";
         $.ajax({
             url: "login.php",
             method: "POST",
@@ -90,19 +116,19 @@ $(document).ready(function () {
     });
 
     $('#registrationSubmitButton').click(function () {
-        var firstName = $('#fn').val();
-        var lastName = $('#ln').val();
-        var username = $('#registrationUsername').val();
-        var password = $('#registrationPassword').val();
-        var confirmPassword = $('#confirmRegistrationPassword').val();
-        if (fn != '' && ln != '' && username != '' && password != '' && confirmPassword != '') {
+        const firstName = $('#fn').val();
+        const lastName = $('#ln').val();
+        const username = $('#registrationUsername').val();
+        const password = $('#registrationPassword').val();
+        const confirmPassword = $('#confirmRegistrationPassword').val();
+        if (firstName !== '' && lastName !== '' && username !== '' && password !== '' && confirmPassword !== '') {
             if (checkPassword(password, confirmPassword)) {
                 $.ajax({
                     url: "createAccount.php",
                     method: "POST",
                     data: {firstName: firstName, lastName: lastName, username: username, password: password, level: 0},
                     success: function (data) {
-                        if (data == 'Yes') {
+                        if (data === 'Yes') {
                             $('#accountModal').hide();
                             location.reload();
                             // alert("success");
@@ -130,7 +156,7 @@ $(document).ready(function () {
             method: "POST",
             data: {appName: devName, descrip: version, mac: windows, image},
             success: function (data) {
-                if (data == 'Yes') {
+                if (data === 'Yes') {
                     $('#accountModal').hide();
                     location.reload();
                     // alert("success");

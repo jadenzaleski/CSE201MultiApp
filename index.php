@@ -143,7 +143,8 @@ session_start();
                                                         </div>
                                                         <div class="col-12">
                                                             <button class="btn btn-outline-primary w-100"
-                                                                    name="registrationSubmitButton" id="registrationSubmitButton" type="button">
+                                                                    name="registrationSubmitButton"
+                                                                    id="registrationSubmitButton" type="button">
                                                                 Submit
                                                             </button>
                                                         </div>
@@ -158,16 +159,16 @@ session_start();
                         <!-- add app button-->
                         <?php
                         if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
-                        ?>
-                        <button class="btn btn-outline-light" data-bs-target="#form" data-bs-toggle="modal"
-                                type="button" id="addAppButton">
-                            <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
-                                 width="16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
-                                      fill-rule="evenodd"/>
-                            </svg>
-                            Add App
-                        </button>
+                            ?>
+                            <button class="btn btn-outline-light" data-bs-target="#form" data-bs-toggle="modal"
+                                    type="button" id="addAppButton">
+                                <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
+                                     width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"
+                                          fill-rule="evenodd"/>
+                                </svg>
+                                Add App
+                            </button>
                         <?php
                         } else {
                         ?>
@@ -176,7 +177,7 @@ session_start();
                                     $('#navLoginButton').addClass("rounded-end");
                                 });
                             </script>
-                        <?php
+                            <?php
                         }
                         ?>
                         <!-- add app modal with form -->
@@ -283,9 +284,9 @@ session_start();
                                 </svg>
                                 Requests
                             </button>
-                            <?php
+                        <?php
                         } else {
-                            ?>
+                        ?>
                             <script>
                                 $(document).ready(function () {
                                     $('#addAppButton').addClass("rounded-end");
@@ -346,7 +347,8 @@ session_start();
                                                         </div>
                                                         <div class="col-8">
                                                             <h6 class="mb-0">Short Description:</h6>
-                                                            <p>SHORT - Below is an example form built entirely with Bootstrap’s
+                                                            <p>SHORT - Below is an example form built entirely with
+                                                                Bootstrap’s
                                                                 form controls. Each
                                                                 required form group has a validation state that can be
                                                                 triggered by attempting to submit the form
@@ -354,7 +356,8 @@ session_start();
                                                         </div>
                                                         <div class="col-12 mt-1">
                                                             <h6 class="mb-0">Description:</h6>
-                                                            <p> MAIN - Below is an example form built entirely with Bootstrap’s
+                                                            <p> MAIN - Below is an example form built entirely with
+                                                                Bootstrap’s
                                                                 form controls. Each
                                                                 required form group has a validation state that can be
                                                                 triggered by attempting to submit the form
@@ -727,8 +730,7 @@ session_start();
             <!--                </li>-->
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="album">
-                <!-- beginning of app which will need to be repeated for each app-->
-
+                <!-- where all apps go -->
             </div>
         </div>
     </div>
