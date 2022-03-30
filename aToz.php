@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$sql = "SELECT * FROM Data.apps";
+$sql = "SELECT * FROM Data.apps ORDER BY name DESC";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
