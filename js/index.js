@@ -33,13 +33,27 @@ function checkPassword(p, cp) {
     }
 }
 
+function showApps() {
+    $.ajax({
+        url: "showApps.php",
+        type: "POST",
+        success: function (data) {
+            $('#album').innerHTML.replaceWith(data);
+            alert(data);
+        }
+    })
+}
 
-// beginning of JQUERY
 // to enable it for your editor do this:
 // in Settings | Languages & Frameworks | JavaScript | Libraries,
-// check jquery and click ok
+// check jquery and click ok.
+// beginning of JQUERY
 $(document).ready(function () {
+
+    showApps();
+
     $('#loginButton').click(function () {
+        showApps();
         var username = $('#usernameLoginInput').val();
         var password = $('#passwordLoginInput').val();
         if (username != '' && password != '') {
