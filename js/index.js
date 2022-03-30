@@ -169,11 +169,11 @@ $(document).ready(function () {
         var mac = $('#macCheckbox').val();
         var windows = $('#windowsCheckbox').val();
         var image = $('#applicationImageInput').val();
-        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && version !== '' && (mac === true || windows === true) && image !== null) {
+        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && version !== '' && (mac === true || windows === true) && downloadlink !== '' && image !== null) {
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
-                data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image},
+                data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image downloadlink: downloadlink},
                 success: function (data) {
                     if (data === 'Yes') {
                         $('#addAppModalForm').hide();
