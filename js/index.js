@@ -168,20 +168,24 @@ $(document).ready(function () {
         var mac = $('macCheckbox').val();
         var windows = $('windowsCheckbox').val();
         var image = $('applicationImageInput').val();
-        $.ajax({
-            url: "addApp.php",
-            method: "POST",
-            data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image},
-            success: function (data) {
-                if (data === 'Yes') {
-                    $('#accountModal').hide();
-                    location.reload();
-                    // alert("success");
-                } else {
-                    alert(data);
+        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && version !== '' && (mac = true || windows = true) && image !== null) {
+            $.ajax({
+                url: "addApp.php",
+                method: "POST",
+                data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image},
+                success: function (data) {
+                    if (data === 'Yes') {
+                        $('#accountModal').hide();
+                        location.reload();
+                        // alert("success");
+                    } else {
+                        alert(data);
+                    }
                 }
-            }
-        });
+            });
+        }  else {
+            $('#createAccountForm').toggleClass("was-validated");
+        }
     });
 
 }); // end of jquery
