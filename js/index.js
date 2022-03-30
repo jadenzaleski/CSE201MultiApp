@@ -169,6 +169,7 @@ $(document).ready(function () {
         var mac = $('#macCheckbox').val();
         var windows = $('#windowsCheckbox').val();
         var image = $('#applicationImageInput').val();
+        //TODO fix this if statement
         if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && !isNaN(version) && downloadLink !== '') {
             $.ajax({
                 url: "addApp.php",
