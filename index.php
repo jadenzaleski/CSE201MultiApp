@@ -193,7 +193,7 @@ session_start();
                                     </div>
                                     <!-- modal body-->
                                     <div class="modal-body">
-                                        <form class="row g-3 needs-validation">
+                                        <form class="row g-3 needs-validation" id="addAppForm">
                                             <div class="col-md-6">
                                                 <label class="form-label" for="applicationNameInput">Application
                                                     Name</label>
