@@ -191,9 +191,23 @@ $(document).ready(function () {
         }
     });
     $('#atozdrop').click(function () {
-        alert('that worked')
         $.ajax({
             url: "aToz.php",
+            method: "GET",
+            data: {},
+            success: function (data) {
+                $('#album').html(data);
+                // alert('ajax worked');
+
+            },
+            error: function (result) {
+                alert('ajax show apps error: ' + result);
+            }
+        })
+    });
+    $('#dateAd').click(function () {
+        $.ajax({
+            url: "dateAdd.php",
             method: "GET",
             data: {},
             success: function (data) {

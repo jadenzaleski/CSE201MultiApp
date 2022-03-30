@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$sql = "SELECT * FROM Data.apps ORDER BY name ASC";
+$sql = "SELECT * FROM Data.apps ORDER BY createdAt ASC";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {

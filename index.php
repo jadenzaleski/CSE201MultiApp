@@ -647,7 +647,7 @@ session_start();
                         <!-- dropdown list -->
                         <ul aria-labelledby="sort" class="dropdown-menu">
                             <li><a class="dropdown-item" id="atozdrop" href="#">A-Z</a></li>
-                            <li><a class="dropdown-item" href="#">Date Added</a></li>
+                            <li><a class="dropdown-item" id="dateAd" href="#">Date Added</a></li>
                         </ul>
                     </li>
                     <!-- filter dropdown -->
