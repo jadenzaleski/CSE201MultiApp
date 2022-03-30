@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-$sql = "SELECT id FROM Data.apps ORDER BY RAND() LIMIT 1";
+$sql = "SELECT * FROM Data.apps ORDER BY RAND() LIMIT 1";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
