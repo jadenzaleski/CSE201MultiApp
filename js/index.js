@@ -115,7 +115,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $('#loginForm').toggleClass("was-validated");
+            $('#loginForm').addClass("was-validated");
         }
     });
 
@@ -155,7 +155,7 @@ $(document).ready(function () {
                 });
             }
         } else {
-            $('#createAccountForm').toggleClass("was-validated");
+            $('#createAccountForm').addClass("was-validated");
         }
     });
 
@@ -169,7 +169,7 @@ $(document).ready(function () {
         var mac = $('#macCheckbox').val();
         var windows = $('#windowsCheckbox').val();
         var image = $('#applicationImageInput').val();
-        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && !isNaN(version) && (mac === true || windows === true) && downloadLink !== '') {
+        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && !isNaN(version) && downloadLink !== '') {
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
@@ -185,8 +185,8 @@ $(document).ready(function () {
                 }
             });
         }  else {
-            $('#addAppModalForm').toggleClass("was-validated");
-            alert('error in if')
+            $('#addAppModalForm').addClass("was-validated");
+            alert('error in if params')
         }
     });
 
