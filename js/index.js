@@ -24,7 +24,7 @@
             }, false)
         })
 })()
-
+var AZtoggle = false;
 /**
  * @name checkPassword
  * @description Check to see if passwords match.
@@ -53,7 +53,11 @@ function checkPassword(p, cp) {
  */
 function showApps() {
     $.ajax({
-        url: "showApps.php",
+        var name = "showApps.php";
+        if (AZtoggle) {
+            name = "aToz.php";
+        }
+        url: name,
         method: "GET",
         data: {},
         success: function (data) {
@@ -192,5 +196,6 @@ $(document).ready(function () {
     });
     $('#atozdrop').click(function () {
         alert('that worked')
+        AZtoggle = true;
     });
 }); // end of jquery
