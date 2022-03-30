@@ -178,7 +178,7 @@ $(document).ready(function () {
                     if (data === 'Yes') {
                         $('#addAppModalForm').hide();
                         location.reload();
-                        // alert("success");
+                        alert("success");
                     } else {
                         alert(data);
                     }
