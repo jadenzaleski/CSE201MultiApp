@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "config.php";
+
 if (isset($_POST["username"])) {
     $checkSQL = "SELECT * FROM Data.users  
       WHERE username = '" . $_POST['username'] . "'";
