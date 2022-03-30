@@ -171,7 +171,7 @@ $(document).ready(function () {
         $.ajax({
             url: "addApp.php",
             method: "POST",
-            data: {appName: devName, shortdescrip, descrip: version, mac: windows, image},
+            data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image},
             success: function (data) {
                 if (data === 'Yes') {
                     $('#accountModal').hide();
