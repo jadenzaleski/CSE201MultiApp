@@ -216,7 +216,7 @@ $(document).ready(function () {
 
             },
             error: function (result) {
-                alert('ajax show apps error: ' + result);
+                alert('ajax show apps error: :( ' + result);
             }
         })
     });
