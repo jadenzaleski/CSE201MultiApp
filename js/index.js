@@ -190,4 +190,7 @@ $(document).ready(function () {
             alert('error in if params')
         }
     });
+    $('#atozdrop').click(function () {
+        alert('that worked')
+    });
 }); // end of jquery
