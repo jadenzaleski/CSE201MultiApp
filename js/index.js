@@ -101,12 +101,12 @@ $(document).ready(function () {
                     url: "createAccount.php",
                     method: "POST",
                     data: {firstName: firstName, lastName: lastName, username: username, password: password, level: 0},
-                    success: function (data) {
-                        if (data == 'Yes') {
-                            $('#accountModal').hide();
-                            location.reload();
-                            // alert("success");
-                        } else {
+                success: function (data) {
+                    if (data == 'Yes') {
+                        $('#accountModal').hide();
+                        location.reload();
+                        // alert("success");
+                            } else {
                             alert(data);
                         }
                     }

@@ -260,7 +260,7 @@ session_start();
                                                        required type="text">
                                             </div>
                                             <div class="col-12">
-                                                <button class="btn btn-primary" type="submit">Submit</button>
+                                                <button id="submit" class="btn btn-primary" type="submit">Submit</button>
                                                 <small class="text-muted float-end mt-2">Request will be reviewed by
                                                     admin.</small>
                                             </div>
