@@ -15,7 +15,6 @@ $password = "jadenzaleski";
 //}
 
 // Create connection
-//$link = new mysqli($servername, $username, $password);
 $connect = mysqli_connect($servername, $username, $password);
 
 // Check connection
