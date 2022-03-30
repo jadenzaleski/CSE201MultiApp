@@ -160,7 +160,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
                             ?>
-                            <button class="btn btn-outline-light" data-bs-target="#form" data-bs-toggle="modal"
+                            <button class="btn btn-outline-light" data-bs-target="#addAppModalForm" data-bs-toggle="modal"
                                     type="button" id="addAppButton">
                                 <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
                                      width="16" xmlns="http://www.w3.org/2000/svg">
