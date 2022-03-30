@@ -181,7 +181,7 @@ session_start();
                         }
                         ?>
                         <!-- add app modal with form -->
-                        <div aria-hidden="true" aria-labelledby="addAppModal" class="modal fade" id="form"
+                        <div aria-hidden="true" aria-labelledby="addAppModal" class="modal fade" id="addAppModalForm"
                              tabindex="-1">
                             <div class="modal-dialog">
                                 <div class="modal-content">

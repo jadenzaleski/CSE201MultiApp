@@ -176,7 +176,7 @@ $(document).ready(function () {
                 data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image},
                 success: function (data) {
                     if (data === 'Yes') {
-                        $('#accountModal').hide();
+                        $('#addAppModalForm').hide();
                         location.reload();
                         // alert("success");
                     } else {
