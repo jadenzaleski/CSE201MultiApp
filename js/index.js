@@ -173,7 +173,7 @@ $(document).ready(function () {
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
-                data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image downloadlink: downloadlink},
+                data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image, downloadLink: downloadLink},
                 success: function (data) {
                     if (data === 'Yes') {
                         $('#addAppModalForm').hide();
