@@ -159,7 +159,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#submit').click(function () {
+    $('#addAppSubmit').click(function () {
         var appName = $('#applicationNameInput').val();
         var devName = $('#devNameInput').val();
         var shortdescrip = $('#shortApplicationDescription').val();
