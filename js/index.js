@@ -33,6 +33,11 @@ function checkPassword(p, cp) {
     }
 }
 
+
+// beginning of JQUERY
+// to enable it for your editor do this:
+// in Settings | Languages & Frameworks | JavaScript | Libraries,
+// check jquery and click ok
 $(document).ready(function () {
     $('#loginButton').click(function () {
         var username = $('#usernameLoginInput').val();
@@ -97,6 +102,7 @@ $(document).ready(function () {
             $('#createAccountForm').toggleClass("was-validated");
         }
     });
+
     $('#submit').click(function () {
         var appName = $('#applicationNameInput').val();
         var devName = $('#devNameInput').val();
@@ -109,19 +115,16 @@ $(document).ready(function () {
             url: "addApp.php",
             method: "POST",
             data: {appName: devName, descrip: version, mac: windows, image},
-                    success: function (data) {
-                        if (data == 'Yes') {
-                            $('#accountModal').hide();
-                            location.reload();
-                            // alert("success");
-                        } else {
-                            alert(data);
-                        }
-                    }
-                });
+            success: function (data) {
+                if (data == 'Yes') {
+                    $('#accountModal').hide();
+                    location.reload();
+                    // alert("success");
+                } else {
+                    alert(data);
+                }
             }
-        } else {
-            $('#createAccountForm').toggleClass("was-validated");
-        }
+        });
     });
-});
+
+}); // end of jquery
