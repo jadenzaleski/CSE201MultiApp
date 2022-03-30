@@ -165,11 +165,11 @@ $(document).ready(function () {
         var shortdescrip = $('#shortApplicationDescription').val();
         var descrip = $('#applicationDescription').val();
         var version = $('#applicationVersionInput').val();
-        var downloadLink = $('#downloadLink').val();
+        var downloadLink = 'hello';
         var mac = $('#macCheckbox').val();
         var windows = $('#windowsCheckbox').val();
         var image = $('#applicationImageInput').val();
-        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && version !== '' && (mac === true || windows === true) && downloadLink !== '') {
+        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && !isNaN(version) && (mac === true || windows === true) && downloadLink !== '') {
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
