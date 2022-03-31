@@ -1,8 +1,6 @@
 <?php
 
 include "config.php";
-function filter()
-{
     $sql = "SELECT * FROM Data.apps WHERE windows=true";
     $result = $connect->query($sql);
 
@@ -193,6 +191,3 @@ function filter()
         ';
         }
     }
-}
-
-filter();
