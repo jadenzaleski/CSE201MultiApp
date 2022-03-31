@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$sql = "SELECT WHERE apple = true FROM Data.apps ";
+$sql = "SELECT * FROM Data.apps WHERE apple = true";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
