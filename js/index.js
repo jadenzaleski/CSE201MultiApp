@@ -160,36 +160,55 @@ $(document).ready(function () {
     });
 
     $('#addAppSubmit').click(function () {
-        var appName = $('#applicationNameInput').val();
-        var devName = $('#devNameInput').val();
-        var shortdescrip = $('#shortApplicationDescription').val();
-        var descrip = $('#applicationDescription').val();
-        var version = $('#applicationVersionInput').val();
-        var downloadLink = 'hello';
-        var mac = $('#macCheckbox').val();
-        var windows = $('#windowsCheckbox').val();
-        var image = $('#applicationImageInput').val();
-        //TODO fix this if statement
-        if (appName !== '' && devName !== '' && shortdescrip !== '' && descrip !== '' && !isNaN(version) && downloadLink !== '') {
+        let appName = $('#applicationNameInput').val();
+        let devName = $('#devNameInput').val();
+        let shortDescription = $('#shortApplicationDescription').val();
+        let description = $('#applicationDescription').val();
+        let version = $('#applicationVersionInput').val();
+        let downloadLink = $('#DownloadLinkInput').val();
+        let mac = $('#macCheckbox')[0].checked;
+        let windows = $('#windowsCheckbox')[0].checked;
+        let image = $('#applicationImageInput').val();
+
+        if (appName !== '' && devName !== '' && shortDescription !== '' && description !== '' && !isNaN(version) && downloadLink !== '' && (mac || windows)) {
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
-                data: {appName: appName, devName: devName, shortdescrip: shortdescrip, descrip: descrip, version: version, mac: mac, windows: windows, image: image, downloadLink: downloadLink},
+                data: {
+                    appName: appName,
+                    devName: devName,
+                    shortDescription: shortDescription,
+                    description: description,
+                    version: version,
+                    mac: mac,
+                    windows: windows,
+                    image: image,
+                    downloadLink: downloadLink
+                },
                 success: function (data) {
                     if (data === 'Yes') {
                         $('#addAppModalForm').hide();
                         location.reload();
-                        alert("success");
+                        alert("App submitted!");
                     } else {
                         alert(data);
                     }
                 }
             });
-        }  else {
+        } else {
+            if (mac || windows) {
+                $('#macCheckbox').removeAttr('required');
+                $('#windowsCheckbox').removeAttr('required');
+            }
+            if (!mac && !windows) {
+                $('#macCheckbox').attr('required');
+                $('#windowsCheckbox').attr('required');
+            }
             $('#addAppModalForm').addClass("was-validated");
-            alert('error in if params')
+
         }
     });
+
     $('#atozdrop').click(function () {
         $.ajax({
             url: "aToz.php",
@@ -205,6 +224,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $('#dateAd').click(function () {
         $.ajax({
             url: "dateAdd.php",
@@ -220,7 +240,8 @@ $(document).ready(function () {
             }
         })
     });
-    $('#macsort').click(function () {
+
+    $('#macSort').click(function () {
         $.ajax({
             url: "macfilter.php",
             method: "GET",
@@ -235,4 +256,5 @@ $(document).ready(function () {
             }
         })
     });
-}); // end of jquery
+})
+; // end of jquery
