@@ -225,12 +225,18 @@ session_start();
                                                     Image</label>
                                                 <input class="form-control form-control-sm" id="applicationImageInput"
                                                        required
-                                                       type="file">
+                                                       type="file" accept="image/*">
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label" for="DownloadLinkInput">Download Link</label>
+                                                <input class="form-control" id="DownloadLinkInput"
+                                                       placeholder="https://example.com"
+                                                       required type="url">
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-check form-check-inline mt-2">
                                                     <input class="form-check-input" id="macCheckbox" type="checkbox"
-                                                           value="option1">
+                                                           value="option1" required>
                                                     <label class="form-check-label" for="macCheckbox">
                                                         <svg class="bi bi-apple me-1"
                                                              fill="currentColor"
@@ -244,21 +250,20 @@ session_start();
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" id="windowsCheckbox" type="checkbox"
-                                                           value="option2">
+                                                           value="option2" required>
                                                     <label class="form-check-label" for="windowsCheckbox">
                                                         <svg class="bi bi-windows me-2" fill="currentColor" height="20"
                                                              viewBox="0 2 16 16" width="16"
                                                              xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
-                                                        </svg>
-                                                        Windows</label>
+                                                        </svg>Windows</label>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <label class="form-label" for="applicationVersionInput">Version</label>
                                                 <input class="form-control" id="applicationVersionInput"
-                                                       placeholder="1.0"
-                                                       required type="text">
+                                                       placeholder="1.01"
+                                                       required type="number" step="0.01">
                                             </div>
                                             <div class="col-12">
                                                 <button id="addAppSubmit" class="btn btn-primary" type="button">Submit</button>
@@ -637,7 +642,7 @@ session_start();
                     <!-- sort dropdown -->
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           href="#">
+                           href="javascript:void(0)">
                             <svg class="bi bi-arrow-down-up me-1" fill="currentColor" height="16" viewBox="0 1 16 16"
                                  width="16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"
@@ -646,14 +651,14 @@ session_start();
                             sort</a>
                         <!-- dropdown list -->
                         <ul aria-labelledby="sort" class="dropdown-menu">
-                            <li><a class="dropdown-item" id="atozdrop" href="#">A-Z</a></li>
-                            <li><a class="dropdown-item" id="dateAd" href="#">Date Added</a></li>
+                            <li><a class="dropdown-item" id="atozdrop" href="javascript:void(0)">A-Z</a></li>
+                            <li><a class="dropdown-item" id="dateAd" href="javascript:void(0)">Date Added</a></li>
                         </ul>
                     </li>
                     <!-- filter dropdown -->
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           href="#">
+                           href="javascript:void(0)">
                             <svg class="bi bi-funnel me-1" fill="currentColor" height="16" viewBox="0 1 16 16"
                                  width="16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
@@ -661,7 +666,7 @@ session_start();
                             filter</a>
                         <!-- dropdown list -->
                         <ul aria-labelledby="filter" class="dropdown-menu">
-                            <li><a class="dropdown-item"  id="macsort" href="#">
+                            <li><a class="dropdown-item" id="macSort" href="javascript:void(0)">
                                     <svg class="bi bi-apple me-2"
                                          fill="currentColor"
                                          height="24" viewBox="0 3 16 16"
@@ -671,7 +676,7 @@ session_start();
                                         <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
                                     </svg>
                                     Mac</a></li>
-                            <li><a class="dropdown-item" id="windsort" href="#">
+                            <li><a class="dropdown-item" href="javascript:void(0)">
                                     <svg class="bi bi-windows me-2" fill="currentColor" height="20"
                                          viewBox="0 2 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
