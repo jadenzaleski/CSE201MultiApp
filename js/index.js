@@ -220,4 +220,19 @@ $(document).ready(function () {
             }
         })
     });
+    $('#macsort').click(function () {
+        $.ajax({
+            url: "macfilter.php",
+            method: "GET",
+            data: {},
+            success: function (data) {
+                $('#album').html(data);
+                // alert('ajax worked');
+
+            },
+            error: function (result) {
+                alert('ajax show apps error: :( ' + result);
+            }
+        })
+    });
 }); // end of jquery
