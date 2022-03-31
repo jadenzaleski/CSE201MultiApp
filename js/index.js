@@ -256,5 +256,21 @@ $(document).ready(function () {
             }
         })
     });
+    $('#windsort').click(function () {
+        $.ajax({
+            url: "windfilt.php",
+            method: "GET",
+            data: {},
+            success: function (data) {
+                $('#album').html(data);
+                // alert('ajax worked');
+
+            },
+            error: function (result) {
+                alert('ajax show apps error: :( ' + result);
+            }
+        })
+    });
+})
 })
 ; // end of jquery
