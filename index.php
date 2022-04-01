@@ -221,9 +221,9 @@ session_start();
                                                 <label for="applicationDescription">Description</label>
                                             </div>
                                             <div class="col-12">
-                                                <label class="form-label" for="applicationImageInput">Upload Application
+                                                <label class="form-label" for="fileAjax">Upload Application
                                                     Image</label>
-                                                <input class="form-control form-control-sm" name="applicationImageInput" id="applicationImageInput"
+                                                <input class="form-control form-control-sm" name="fileAjax" id="fileAjax"
                                                        required
                                                        type="file" accept="image/*">
                                             </div>
