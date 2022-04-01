@@ -193,7 +193,7 @@ session_start();
                                     </div>
                                     <!-- modal body-->
                                     <div class="modal-body">
-                                        <form class="row g-3 needs-validation" id="addAppForm">
+                                        <form class="row g-3 needs-validation" method="post" id="addAppForm" enctype="multipart/form-data">
                                             <div class="col-md-6">
                                                 <label class="form-label" for="applicationNameInput">Application
                                                     Name</label>
@@ -223,7 +223,7 @@ session_start();
                                             <div class="col-12">
                                                 <label class="form-label" for="applicationImageInput">Upload Application
                                                     Image</label>
-                                                <input class="form-control form-control-sm" id="applicationImageInput"
+                                                <input class="form-control form-control-sm" name="applicationImageInput" id="applicationImageInput"
                                                        required
                                                        type="file" accept="image/*">
                                             </div>

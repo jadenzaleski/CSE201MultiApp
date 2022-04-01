@@ -168,9 +168,10 @@ $(document).ready(function () {
         let downloadLink = $('#DownloadLinkInput').val();
         let mac = $('#macCheckbox')[0].checked;
         let windows = $('#windowsCheckbox')[0].checked;
-        let image = $('#applicationImageInput').val();
+        let files = $('#applicationImageInput')[0].files;
 
-        if (appName !== '' && devName !== '' && shortDescription !== '' && description !== '' && !isNaN(version) && downloadLink !== '' && (mac || windows)) {
+
+        if (files.length > 0 && appName !== '' && devName !== '' && shortDescription !== '' && description !== '' && !isNaN(version) && downloadLink !== '' && (mac || windows)) {
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
@@ -182,7 +183,6 @@ $(document).ready(function () {
                     version: version,
                     mac: mac,
                     windows: windows,
-                    image: image,
                     downloadLink: downloadLink
                 },
                 success: function (data) {
@@ -195,6 +195,9 @@ $(document).ready(function () {
                     }
                 }
             });
+
+
+
         } else {
             if (mac || windows) {
                 $('#macCheckbox').removeAttr('required');
