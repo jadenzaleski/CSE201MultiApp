@@ -73,21 +73,15 @@ function showFeatureApp() {
         method: "GET",
         data: {},
         success: function (data) {
-            $('#listOfReqApps').html(data);
+            $('#feature').html(data);
             // alert('ajax worked');
 
         },
         error: function (result) {
-            alert('ajax show request apps error: ' + result);
+            alert('ajax show feature app error: ' + result);
         }
     })
 }
-
-function showRequestedApps() {
-
-}
-
-
 
 
 /**
@@ -101,22 +95,6 @@ $(document).ready(function () {
 
     showApps();
     showFeatureApp();
-
-    $('#requestsButton').click(function () {
-        $.ajax({
-            url: "showRequestedApps.php",
-            method: "GET",
-            data: {},
-            success: function (data) {
-                $('#feature').html(data);
-                // alert('ajax worked');
-
-            },
-            error: function (result) {
-                alert('ajax show feature app error: ' + result);
-            }
-        })
-    });
 
     $('#loginButton').click(function () {
         const username = $('#usernameLoginInput').val();
@@ -192,19 +170,25 @@ $(document).ready(function () {
         let mac = $('#macCheckbox')[0].checked;
         let windows = $('#windowsCheckbox')[0].checked;
         let imageInput = $('#fileAjax')[0].files;
-        // for file  todo finish this
-        let myFile = document.getElementById('fileAjax');
-        let files = myFile.files;
-        let formData = new FormData();
-        let file = files[0];
-        let date = new Date().toLocaleString()
-        date = date.replaceAll('/', '_');
-        date = date.replaceAll(',', '');
-        date = date.replaceAll(' ', '_');
-        let fileName =  + date + "_" + file.name;
-
 
         if (imageInput.length > 0 && appName !== '' && devName !== '' && shortDescription !== '' && description !== '' && !isNaN(version) && downloadLink !== '' && (mac || windows)) {
+            let myFile = document.getElementById('fileAjax');
+            let files = myFile.files;
+            let formData = new FormData();
+            let file = files[0];
+            let date = new Date().toLocaleString()
+            date = date.replaceAll('/', '_');
+            date = date.replaceAll(',', '');
+            date = date.replaceAll(':', '_');
+            date = date.replaceAll(' ', '_');
+            let fileName = date + "_" + file.name;
+            let boxes = [0, 0];
+
+            if (mac)
+                boxes[0] = 1;
+            if (windows)
+                boxes[1] = 1;
+
             $.ajax({
                 url: "addApp.php",
                 method: "POST",
@@ -217,7 +201,8 @@ $(document).ready(function () {
                     mac: mac,
                     windows: windows,
                     downloadLink: downloadLink,
-                    fileName: fileName
+                    fileName: fileName,
+                    boxes: boxes
                 },
                 success: function (data) {
                     if (data === 'Yes') {
@@ -230,38 +215,32 @@ $(document).ready(function () {
                 }
             });
 
-
             // Add the file to the AJAX request
             formData.append('fileAjax', file, fileName);
-
             // Set up the request
             var xhr = new XMLHttpRequest();
-
             // Open the connection
             xhr.open('POST', '/uploadImage.php', true);
-
             // Set up a handler for when the task for the request is complete
             xhr.onload = function () {
-                if (xhr.status == 200) {
-                    alert(xhr.response);
-                    alert('Upload complete!');
+                if (xhr.status === 200) {
+                    // alert(xhr.response);
+                    // alert('Upload complete!');
                 } else {
                     alert('Upload error. Try again.');
                 }
             };
-
             // Send the data.
             xhr.send(formData);
 
-
         } else {
             if (mac || windows) {
-                mac.removeAttr('required');
-                windows.removeAttr('required');
+                $('#macCheckbox').removeAttr('required');
+                $('#windowsCheckbox').removeAttr('required');
             }
             if (!mac && !windows) {
-                mac.attr('required');
-                windows.attr('required');
+                $('#macCheckbox').attr('required');
+                $('#windowsCheckbox').attr('required');
             }
 
             $('#addAppModalForm').addClass("was-validated");
@@ -315,7 +294,6 @@ $(document).ready(function () {
             }
         })
     });
-
     $('#windsort').click(function () {
         $.ajax({
             url: "windfilt.php",
@@ -331,4 +309,5 @@ $(document).ready(function () {
             }
         })
     });
-}); // end of jquery
+})
+; // end of jquery

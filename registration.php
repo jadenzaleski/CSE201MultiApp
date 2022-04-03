@@ -26,3 +26,5 @@ function test_input($data): string
     $data = htmlspecialchars($data);
     return $data;
 }
+
+mysqli_close($connect);

@@ -89,5 +89,3 @@ if ($result->num_rows > 0) {
                                             </li>';
     }
 }
-
-mysqli_close($connect);
