@@ -1,24 +1,24 @@
 <?php
 include "config.php";
 
-$sql = "SELECT * FROM Data.requestedApps";
+$sql = "SELECT * FROM Data.requestedApps ORDER BY createdAt";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
         echo '<!-- list element -->
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center" id="reqApp_' . $row["id"] . '">
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-10">
-                                                            <h5>Messenger</h5>
+                                                            <h5>' . $row["name"] . ' - ' . $row["createdAt"] . '</h5>
                                                         </div>
                                                         <div class="col-2">
                                                             <div aria-label="button Group" class="btn-group"
                                                                  role="group">
                                                                 <button class="btn btn-outline-success py-1"
-                                                                        type="button">
+                                                                        type="button" onclick="AddRequestedApp(' . $row["id"] . ')">
                                                                     <svg class="bi bi-check-lg" fill="currentColor"
                                                                          height="16" viewBox="0 1 16 16"
                                                                          width="16" xmlns="http://www.w3.org/2000/svg">
@@ -38,50 +38,41 @@ if ($result->num_rows > 0) {
                                                             </div>
                                                         </div>
                                                         <div class="col-4 text-center">
-                                                            <img alt="" class="shadow-lg" src="images/messenger.png"
+                                                            <img alt="" class="shadow-lg" src="' . $row["imgPath"] . '"
                                                                  style="border-radius: 12%;"
                                                                  width="50%">
                                                         </div>
                                                         <div class="col-8">
                                                             <h6 class="mb-0">Short Description:</h6>
-                                                            <p>SHORT - Below is an example form built entirely with
-                                                                Bootstrap’s
-                                                                form controls. Each
-                                                                required form group has a validation state that can be
-                                                                triggered by attempting to submit the form
-                                                                without completing it.</p>
+                                                            <p>' . $row["shortDescription"] . '</p>
                                                         </div>
                                                         <div class="col-12 mt-1">
                                                             <h6 class="mb-0">Description:</h6>
-                                                            <p> MAIN - Below is an example form built entirely with
-                                                                Bootstrap’s
-                                                                form controls. Each
-                                                                required form group has a validation state that can be
-                                                                triggered by attempting to submit the form
-                                                                without completing it.</p>
+                                                            <p>' . $row["description"] . '</p>
                                                         </div>
                                                         <div class="col-5 text-center">
-                                                            <p>Submitted by: Jaden Zaleski</p>
+                                                            <p>Submitted by: ' . $row["firstName"] . ' ' . $row["lastName"] . '</p>
                                                         </div>
                                                         <div class="col-3 text-center">
-                                                            <p>Developer name</p>
+                                                            <p>' . $row["devName"] . '</p>
                                                         </div>
                                                         <div class="col-2 text-center">
-                                                            <p>ID: 45</p>
+                                                            <p>ID: ' . $row["id"] . '</p>
                                                         </div>
                                                         <div class="col-2 text-center">
-                                                            <p>
+                                                            <p>'; if ($row['apple'] == true) { echo '
                                                                 <svg class="bi bi-apple" fill="currentColor"
                                                                      height="18" viewBox="0 1 16 16" width="16"
                                                                      xmlns="http://www.w3.org/2000/svg">
                                                                     <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
                                                                     <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282z"/>
-                                                                </svg>
+                                                                </svg> '; } if ($row['windows'] == true) { echo '
                                                                 <svg class="bi bi-windows mx-2" fill="currentColor"
                                                                      height="18" viewBox="0 0 16 16"
                                                                      width="16" xmlns="http://www.w3.org/2000/svg">
                                                                     <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
                                                                 </svg>
+                                                                ';} echo '
                                                             </p>
                                                         </div>
                                                     </div>
@@ -89,3 +80,5 @@ if ($result->num_rows > 0) {
                                             </li>';
     }
 }
+
+mysqli_close($connect);

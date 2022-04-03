@@ -83,6 +83,30 @@ function showFeatureApp() {
     })
 }
 
+function AddRequestedApp(id) {
+    $('#reqApp_' + id).fadeOut(500, function () {
+        $('#reqApp_' + id).remove();
+    });
+    // alert('added req app id:' + id.toString());
+    $.ajax({
+        url: "addRequestedApp.php",
+        method: "POST",
+        data: {id: id},
+        success: function (data) {
+            // alert('id: ' + id + ' data: ' + data);
+
+        },
+        error: function (result) {
+            alert('add req app error: ' + result);
+        }
+    });
+
+}
+
+function removeRequestedApp(id) {
+
+}
+
 
 /**
  * To enable jquery for your editor do this:
@@ -294,6 +318,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $('#windsort').click(function () {
         $.ajax({
             url: "windfilt.php",
@@ -308,6 +333,22 @@ $(document).ready(function () {
                 alert('ajax show apps error: :( ' + result);
             }
         })
+    });
+
+    $('#requestsButton').click(function () {
+        $.ajax({
+            url: "showRequestedApps.php",
+            method: "GET",
+            data: {},
+            success: function (data) {
+                $('#listOfReqApps').html(data);
+                // alert('ajax worked');
+
+            },
+            error: function (result) {
+                alert('ajax show feature app error: ' + result);
+            }
+        });
     });
 })
 ; // end of jquery
