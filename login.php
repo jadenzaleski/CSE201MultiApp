@@ -29,3 +29,6 @@ if (isset($_POST["action"])) {
     unset($_SESSION["level"]);
 }
 
+mysqli_close($connect);
+
+

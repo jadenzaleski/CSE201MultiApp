@@ -73,14 +73,18 @@ function showFeatureApp() {
         method: "GET",
         data: {},
         success: function (data) {
-            $('#feature').html(data);
+            $('#listOfReqApps').html(data);
             // alert('ajax worked');
 
         },
         error: function (result) {
-            alert('ajax show feature app error: ' + result);
+            alert('ajax show request apps error: ' + result);
         }
     })
+}
+
+function showRequestedApps() {
+
 }
 
 
@@ -95,6 +99,22 @@ $(document).ready(function () {
 
     showApps();
     showFeatureApp();
+
+    $('#requestsButton').click(function () {
+        $.ajax({
+            url: "showRequestedApps.php",
+            method: "GET",
+            data: {},
+            success: function (data) {
+                $('#feature').html(data);
+                // alert('ajax worked');
+
+            },
+            error: function (result) {
+                alert('ajax show feature app error: ' + result);
+            }
+        })
+    });
 
     $('#loginButton').click(function () {
         const username = $('#usernameLoginInput').val();
@@ -235,12 +255,12 @@ $(document).ready(function () {
 
         } else {
             if (mac || windows) {
-                $('#macCheckbox').removeAttr('required');
-                $('#windowsCheckbox').removeAttr('required');
+                mac.removeAttr('required');
+                windows.removeAttr('required');
             }
             if (!mac && !windows) {
-                $('#macCheckbox').attr('required');
-                $('#windowsCheckbox').attr('required');
+                mac.attr('required');
+                windows.attr('required');
             }
 
             $('#addAppModalForm').addClass("was-validated");
@@ -294,6 +314,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $('#windsort').click(function () {
         $.ajax({
             url: "windfilt.php",
@@ -309,5 +330,4 @@ $(document).ready(function () {
             }
         })
     });
-})
-; // end of jquery
+}); // end of jquery

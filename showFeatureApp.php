@@ -20,3 +20,5 @@ if ($result->num_rows > 0) {
 
         </div>';
 }
+
+mysqli_close($connect);

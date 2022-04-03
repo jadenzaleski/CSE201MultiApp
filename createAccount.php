@@ -32,3 +32,5 @@ if (isset($_POST["username"])) {
         }
     }
 }
+
+mysqli_close($connect);

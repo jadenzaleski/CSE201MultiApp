@@ -191,3 +191,5 @@ include "config.php";
         ';
         }
     }
+
+mysqli_close($connect);
