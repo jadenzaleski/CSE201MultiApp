@@ -76,7 +76,7 @@ session_start();
                                     <!-- modal header -->
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="accountLoginModalLabel">Account</h5>
-                                        <button aria-label="Close" class="btn-close"  id="accountCloseBtn" data-bs-dismiss="modal"
+                                        <button aria-label="Close" class="btn-close"  id="" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
                                     <!-- modal body -->

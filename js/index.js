@@ -95,6 +95,7 @@ function addRequestedApp(id) {
         data: {id: id},
         success: function (data) {
             // alert('id: ' + id + ' data: ' + data);
+            showApps();
 
         },
         error: function (result) {
@@ -137,6 +138,7 @@ $(document).ready(function () {
     showFeatureApp();
 
     $('#loginButton').click(function () {
+        // alert('fired');
         const username = $('#usernameLoginInput').val();
         const password = $('#passwordLoginInput').val();
         if (username !== '' && password !== '') {
@@ -149,7 +151,6 @@ $(document).ready(function () {
                     if (data === 'No') {
                         alert("The username or password is incorrect or does not exist.");
                     } else {
-                        $('#accountModal').hide();
                         location.reload();
                         // alert("success");
                     }

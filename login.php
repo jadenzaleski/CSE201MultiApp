@@ -16,7 +16,7 @@ if (isset($_POST["username"])) {
         $_SESSION['password'] = $row[4];
         $_SESSION['createdAt'] = $row[5];
         $_SESSION['level'] = $row[6];
-        echo 'Yes';
+        echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
     } else {
         echo 'No';
     }
