@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
                                                             <div aria-label="button Group" class="btn-group"
                                                                  role="group">
                                                                 <button class="btn btn-outline-success py-1"
-                                                                        type="button" onclick="AddRequestedApp(' . $row["id"] . ')">
+                                                                        type="button" onclick="addRequestedApp(' . $row["id"] . ')">
                                                                     <svg class="bi bi-check-lg" fill="currentColor"
                                                                          height="16" viewBox="0 1 16 16"
                                                                          width="16" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
                                                                     </svg>
                                                                 </button>
                                                                 <button class="btn btn-outline-danger py-1"
-                                                                        type="button">
+                                                                        type="button" onclick="removeRequestedApp(' . $row["id"] . ')">
                                                                     <svg class="bi bi-trash" fill="currentColor"
                                                                          height="16" viewBox="0 0 16 16"
                                                                          width="16" xmlns="http://www.w3.org/2000/svg">

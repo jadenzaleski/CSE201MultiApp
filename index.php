@@ -17,7 +17,7 @@ session_start();
     <!-- javascript -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/index.js" defer></script>
+    <script src="js/index.js"></script>
 </head>
 <!-- navbar with login add app and requests button -->
 <nav>
@@ -76,7 +76,7 @@ session_start();
                                     <!-- modal header -->
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="accountLoginModalLabel">Account</h5>
-                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                        <button aria-label="Close" class="btn-close"  id="accountCloseBtn" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
                                     <!-- modal body -->
@@ -188,7 +188,7 @@ session_start();
                                     <!-- modal header-->
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="addAppModalLabel">Add Application</h5>
-                                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                        <button aria-label="Close" class="btn-close" id="addAppCloseBtn" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
                                     <!-- modal body-->

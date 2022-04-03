@@ -1,3 +1,4 @@
+
 /**
  * Main javascript file for all custom code.
  * For creating documentation use:
@@ -83,7 +84,7 @@ function showFeatureApp() {
     })
 }
 
-function AddRequestedApp(id) {
+function addRequestedApp(id) {
     $('#reqApp_' + id).fadeOut(500, function () {
         $('#reqApp_' + id).remove();
     });
@@ -104,7 +105,22 @@ function AddRequestedApp(id) {
 }
 
 function removeRequestedApp(id) {
+    $('#reqApp_' + id).fadeOut(500, function () {
+        $('#reqApp_' + id).remove();
+    });
+    // alert('added req app id:' + id.toString());
+    $.ajax({
+        url: "removeRequestedApp.php",
+        method: "POST",
+        data: {id: id},
+        success: function (data) {
+            // alert('id: ' + id + ' data: ' + data);
 
+        },
+        error: function (result) {
+            alert('remove req app error: ' + result);
+        }
+    });
 }
 
 
@@ -170,9 +186,14 @@ $(document).ready(function () {
                     data: {firstName: firstName, lastName: lastName, username: username, password: password, level: 0},
                     success: function (data) {
                         if (data === 'Yes') {
-                            $('#accountModal').hide();
-                            location.reload();
-                            // alert("success");
+                            $('#accountCloseBtn').click();
+                            $(':input','#createAccountForm')
+                                .not(':button, :submit, :reset, :hidden')
+                                .val('')
+                                .prop('checked', false)
+                                .prop('selected', false);
+                            $('#addAppModalForm').removeClass('was-validation').addClass('needs-validation');
+                            alert("Account created! You are now logged in.");
                         } else {
                             alert(data);
                         }
@@ -230,8 +251,13 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     if (data === 'Yes') {
-                        $('#addAppModalForm').hide();
-                        location.reload();
+                        $('#addAppCloseBtn').click();
+                        $(':input','#addAppForm')
+                            .not(':button, :submit, :reset, :hidden')
+                            .val('')
+                            .prop('checked', false)
+                            .prop('selected', false);
+                        $('#addAppModalForm').removeClass('was-validation').addClass('needs-validation');
                         alert("App submitted!");
                     } else {
                         alert(data);
@@ -282,7 +308,7 @@ $(document).ready(function () {
 
             },
             error: function (result) {
-                alert('ajax show apps error: ' + result);
+                alert('ajax showAtoZ apps error: ' + result);
             }
         })
     });
@@ -298,7 +324,7 @@ $(document).ready(function () {
 
             },
             error: function (result) {
-                alert('ajax show apps error: :( ' + result);
+                alert('ajax show date added apps error: :( ' + result);
             }
         })
     });
