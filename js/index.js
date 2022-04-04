@@ -411,7 +411,22 @@ $(document).ready(function () {
             }
         })
     });
+    $('#searchBar').ready(function () {
+        let chars = $('#searchBar').val();
+        $.ajax({
+            url: "search.php",
+            method: "GET",
+            data: {chars: chars},
+            success: function (data) {
+                $('#album').html(data);
+                // alert('ajax worked');
 
+            },
+            error: function (result) {
+                alert('ajax show apps error: :( ' + result);
+            }
+        })
+    });
     $('#requestsButton').click(function () {
         $.ajax({
             url: "showRequestedApps.php",

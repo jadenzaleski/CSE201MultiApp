@@ -415,8 +415,9 @@ session_start();
                     </li>
                 </ul>
                 <!-- search bar -->
+
                 <form class="my-2">
-                    <input aria-label="Search" class="form-control" placeholder="Search" type="text">
+                    <input aria-label="Search" id="searchBar" class="form-control" placeholder="Search" type="text">
                 </form>
             </div>
         </div>
