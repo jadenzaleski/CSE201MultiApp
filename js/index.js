@@ -123,8 +123,8 @@ function removeRequestedApp(id) {
         }
     });
 }
-
 function showComments(id) {
+    // alert('fired comment adder: ' + id + " comment: " + text);
     // alert("fired")
     $.ajax({
         url: "showComments.php",
@@ -149,6 +149,7 @@ function addCommentForApp(id) {
         data: {text: text, id: id},
         success: function (data) {
             alert('Comment posted!');
+            $('#commentsList_' + id).append(cHTML);
         },
         error: function (result) {
             alert('add comment error: ' + result);
