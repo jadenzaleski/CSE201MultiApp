@@ -146,8 +146,9 @@ function addCommentForApp(id) {
         url: "addComment.php",
         method: "POST",
         data: {text: text, id: id},
-        success: function (data) {
+        success: function (name) {
             alert('Comment posted!');
+            showComments(id, name);
         },
         error: function (result) {
             alert('add comment error: ' + result);

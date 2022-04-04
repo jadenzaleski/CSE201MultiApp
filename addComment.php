@@ -5,7 +5,7 @@ $sql = "INSERT INTO Comments.comments_" . $_POST['id'] . " (id, lastName, firstN
 $result = $connect->query($sql);
 
 $selectSQL = "SELECT row ( name ) FROM Data.apps WHERE id = ". $_POST['id'];
-$selectResult = $connect->query($sql);
+$selectResult = $connect->query($selectSQL);
 echo $selectResult;
 //echo $connect->error;
 
