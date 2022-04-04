@@ -4,6 +4,23 @@ include 'config.php';
 $sqlComment = "SELECT * FROM Comments.comments_" . $_POST['id'];
 $resultComment = $connect->query($sqlComment);
 
+if(isset($_SESSION["level"])) { echo '
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <button class="btn btn-outline-green w-100 me-auto text-primary"
+                                                                data-bs-target="#' . $_POST["name"] . 'AddComment"
+                                                                data-bs-toggle="modal"
+                                                                type="button">
+                                                            <svg class="bi bi-plus-circle me-1" fill="currentColor"
+                                                                 height="26" viewBox="0 1 16 16"
+                                                                 width="18" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                                            </svg>
+        Add Comment
+        </button>
+                                                    </li>
+                                                    '; }
+
 if ($resultComment && $resultComment->num_rows > 0) {
     while ($rowComment = $resultComment->fetch_assoc()) {
         echo '

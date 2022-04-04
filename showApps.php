@@ -28,9 +28,12 @@ if ($result->num_rows > 0) {
                                             <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
                                         </svg>
                                     </button>
+                                    <script>
+                                    var currName = "' . $row['name'] .'";
+</script>
                                     <button class="btn btn-sm btn-outline-secondary"
                                             data-bs-target="#' . $row["name"] . 'ModalCard"
-                                            data-bs-toggle="modal" type="button" onclick="showComments(' . $row["id"] . ', ' . $_SESSION['level'] .')">
+                                            data-bs-toggle="modal" type="button" onclick="showComments(' . $row["id"] . ', currName)">
                                         <svg class="bi bi-info-lg" fill="currentColor" height="16" viewBox="0 1 16 16"
                                              width="16" xmlns="http://www.w3.org/2000/svg">
                                             <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
@@ -109,22 +112,7 @@ if ($result->num_rows > 0) {
                                             <div class="col-lg overflow-scroll" style="height: 22rem;">
                                                 <h5 class="sticky-top bg-white">Comments:</h5>
                                                 <ul class="list-group" id="commentsList_' . $row["id"] . '">
-                                                '; if(isset($_SESSION["level"])) { echo '
-                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                        <button class="btn btn-outline-green w-100 me-auto text-primary"
-                                                                data-bs-target="#' . $row["name"] . 'AddComment"
-                                                                data-bs-toggle="modal"
-                                                                type="button">
-                                                            <svg class="bi bi-plus-circle me-1" fill="currentColor"
-                                                                 height="26" viewBox="0 1 16 16"
-                                                                 width="18" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                                                            </svg>
-        Add Comment
-        </button>
-                                                    </li>
-                                                    '; }
+                                                ';
 
 
         echo '
@@ -195,5 +183,4 @@ if ($result->num_rows > 0) {
         ';
     }
 }
-
 mysqli_close($connect);

@@ -95,7 +95,6 @@ function addRequestedApp(id) {
         data: {id: id},
         success: function (data) {
             // alert('id: ' + id + ' data: ' + data);
-            showApps();
 
         },
         error: function (result) {
@@ -123,16 +122,16 @@ function removeRequestedApp(id) {
         }
     });
 }
-function showComments(id) {
+
+function showComments(id, name) {
     // alert('fired comment adder: ' + id + " comment: " + text);
     // alert("fired")
     $.ajax({
         url: "showComments.php",
         method: "POST",
-        data: {id: id},
+        data: {id: id, name: name},
         success: function (data) {
-            $('#commentsList_' + id).append(data); // must append to add comment button
-            // alert('id: ' + id + " name: " + nameOfApp);
+            $('#commentsList_' + id).html(data); // must append to add comment button
         },
         error: function (result) {
             alert('ajax show comments in app error: ' + result);
@@ -149,7 +148,6 @@ function addCommentForApp(id) {
         data: {text: text, id: id},
         success: function (data) {
             alert('Comment posted!');
-            $('#commentsList_' + id).append(cHTML);
         },
         error: function (result) {
             alert('add comment error: ' + result);
@@ -412,6 +410,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $('#searchBar').onchange(function () {
         let chars = $('#searchBar').val();
         $.ajax({
@@ -428,6 +427,7 @@ $(document).ready(function () {
             }
         })
     });
+
     $('#requestsButton').click(function () {
         $.ajax({
             url: "showRequestedApps.php",
