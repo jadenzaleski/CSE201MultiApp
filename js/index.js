@@ -411,7 +411,7 @@ $(document).ready(function () {
             }
         })
     });
-    $('#searchBar').onkeypress(function () {
+    $('#searchBar').onchange(function () {
         let chars = $('#searchBar').val();
         $.ajax({
             url: "search.php",
