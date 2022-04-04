@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$sql = "SELECT * FROM Data.apps WHERE name re% $_GET['chars'];
+$sql = "SELECT * FROM Data.apps WHERE name re% $_GET['chars']";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
