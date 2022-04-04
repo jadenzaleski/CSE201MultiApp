@@ -5,15 +5,15 @@ session_start();
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <!-- css links -->
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- metadata -->
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="" name="description">
     <meta content="Jaden Zaleski, Maoqing He, Drew Laikin, Ruoyu Xiang" name="author">
     <title>MultiApp</title>
-    <!-- css links -->
-    <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- javascript -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
