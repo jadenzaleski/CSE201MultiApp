@@ -81,7 +81,7 @@ function showFeatureApp() {
         error: function (result) {
             alert('ajax show feature app error: ' + result);
         }
-    })
+    });
 }
 
 function addRequestedApp(id) {
@@ -94,7 +94,7 @@ function addRequestedApp(id) {
         method: "POST",
         data: {id: id},
         success: function (data) {
-            // alert('id: ' + id + ' data: ' + data);
+            alert('id: ' + id + ' data: ' + data);
             showApps();
 
         },
@@ -124,6 +124,38 @@ function removeRequestedApp(id) {
     });
 }
 
+function showComments(id) {
+    // alert("fired")
+    $.ajax({
+        url: "showComments.php",
+        method: "POST",
+        data: {id: id},
+        success: function (data) {
+            $('#commentsList_' + id).append(data);
+            // alert('id: ' + id + " name: " + nameOfApp);
+        },
+        error: function (result) {
+            alert('ajax show comments in app error: ' + result);
+        }
+    });
+}
+
+function addCommentForApp(id) {
+    let text = $('#' + id + 'Comment').val();
+    alert('fired comment adder: ' + id + " comment: " + text);
+    $.ajax({
+        url: "addComment.php",
+        method: "POST",
+        data: {text: text, id: id},
+        success: function (data) {
+            alert(data);
+
+        },
+        error: function (result) {
+            alert('add comment error: ' + result);
+        }
+    });
+}
 
 /**
  * To enable jquery for your editor do this:

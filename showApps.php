@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
                                     </button>
                                     <button class="btn btn-sm btn-outline-secondary"
                                             data-bs-target="#' . $row["name"] . 'ModalCard"
-                                            data-bs-toggle="modal" type="button">
+                                            data-bs-toggle="modal" type="button" onclick="showComments(' . $row["id"] . ')">
                                         <svg class="bi bi-info-lg" fill="currentColor" height="16" viewBox="0 1 16 16"
                                              width="16" xmlns="http://www.w3.org/2000/svg">
                                             <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
@@ -107,7 +107,7 @@ if ($result->num_rows > 0) {
                                             </div>
                                             <div class="col-lg overflow-scroll" style="height: 22rem;">
                                                 <h5 class="sticky-top bg-white">Comments:</h5>
-                                                <ul class="list-group">
+                                                <ul class="list-group" id="commentsList_' . $row["id"] . '">
                                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <button class="btn btn-outline-green w-100 me-auto text-primary"
                                                                 data-bs-target="#' . $row["name"] . 'AddComment"
@@ -122,7 +122,10 @@ if ($result->num_rows > 0) {
         Add Comment
         </button>
                                                     </li>
-                                                    <!-- add more comments here -->
+                                                    ';
+
+
+        echo '
                                                 </ul>
                                             </div>
                                         </div>
@@ -167,9 +170,9 @@ if ($result->num_rows > 0) {
                                 <!-- modal body -->
                                 <div class="modal-body">
                                     <div class="form-floating">
-                                        <textarea class="form-control" id="' . $row["name"] . 'Comment"
+                                        <textarea class="form-control" id="' . $row["id"] . 'Comment"
                                                   placeholder="Leave a comment here" style="height: 200px"></textarea>
-                                        <label for="' . $row["name"] . 'Comment">Comment</label>
+                                        <label for="' . $row["id"] . 'Comment">Comment</label>
                                     </div>
                                 </div>
                                 <!-- modal footer -->
@@ -179,7 +182,7 @@ if ($result->num_rows > 0) {
                                             type="button">Close
                                     </button>
                                     <button class="btn btn-primary" data-bs-target="#' . $row["name"] . 'ModalCard"
-                                            data-bs-toggle="modal"
+                                            data-bs-toggle="modal" onclick="addCommentForApp(' . $row["id"] . ')"
                                             type="button">Post
                                     </button>
                                 </div>
