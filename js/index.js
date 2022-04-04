@@ -94,7 +94,7 @@ function addRequestedApp(id) {
         method: "POST",
         data: {id: id},
         success: function (data) {
-            alert('id: ' + id + ' data: ' + data);
+            // alert('id: ' + id + ' data: ' + data);
             showApps();
 
         },
@@ -131,7 +131,7 @@ function showComments(id) {
         method: "POST",
         data: {id: id},
         success: function (data) {
-            $('#commentsList_' + id).append(data);
+            $('#commentsList_' + id).append(data); // must append to add comment button
             // alert('id: ' + id + " name: " + nameOfApp);
         },
         error: function (result) {
@@ -142,14 +142,13 @@ function showComments(id) {
 
 function addCommentForApp(id) {
     let text = $('#' + id + 'Comment').val();
-    alert('fired comment adder: ' + id + " comment: " + text);
+    // alert('fired comment adder: ' + id + " comment: " + text);
     $.ajax({
         url: "addComment.php",
         method: "POST",
         data: {text: text, id: id},
         success: function (data) {
-            alert(data);
-
+            alert('Comment posted!');
         },
         error: function (result) {
             alert('add comment error: ' + result);
