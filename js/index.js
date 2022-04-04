@@ -416,7 +416,7 @@ $(document).ready(function () {
         let chars = $('#searchBar').val();
         $.ajax({
             url: "search.php",
-            method: "GET",
+            method: "POST",
             data: {chars: chars},
             success: function (data) {
                 $('#album').html(data);
