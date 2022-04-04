@@ -157,6 +157,25 @@ function addCommentForApp(id) {
     });
 }
 
+function removeComment(appID, cID) {
+    $('#commentLI_' + cID).fadeOut(500, function () {
+        $('#commentLI_' + cID).remove();
+    });
+    // alert('added req app id:' + id.toString());
+    $.ajax({
+        url: "removeComment.php",
+        method: "POST",
+        data: {appID: appID, cID: cID},
+        success: function (data) {
+            // alert('id: ' + id + ' data: ' + data);
+
+        },
+        error: function (result) {
+            alert('remove req app error: ' + result);
+        }
+    });
+}
+
 /**
  * To enable jquery for your editor do this:
  * -> Settings -> Languages & Frameworks -> JavaScript -> Libraries,

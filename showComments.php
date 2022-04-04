@@ -7,14 +7,15 @@ $resultComment = $connect->query($sqlComment);
 if ($resultComment && $resultComment->num_rows > 0) {
     while ($rowComment = $resultComment->fetch_assoc()) {
         echo '
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <li class="list-group-item d-flex justify-content-between align-items-start" id="commentLI_' . $rowComment['id'] . '">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold">' . $rowComment["firstName"] . ' ' . $rowComment["lastName"] . '</div>
                                     <p class="ms-4 w-100 fw-light">' . $rowComment["comment"] . '</p>
             
                                 </div>
                                 <span class="badge bg-white text-dark mt-1">' . $rowComment["createdAt"] . '</span>
-                                <button class="btn btn-outline-danger py-0 px-1" type="button">
+                                '; if (isset($_SESSION['level']) && ($_SESSION['level'] == '1' || $_SESSION['level'] == '2')) { echo '
+                                <button class="btn btn-outline-danger py-0 px-1" type="button" onclick="removeComment('. $_POST['id'] .',' . $rowComment['id'] . ')">
                                     <svg class="bi bi-trash m-0" fill="currentColor"
                                          height="20" viewBox="0 1 16 16" width="16"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -23,6 +24,7 @@ if ($resultComment && $resultComment->num_rows > 0) {
                                               fill-rule="evenodd"/>
                                     </svg>
                                 </button>
+                                ';} echo '
                             </li>';
     }
 }

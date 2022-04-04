@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "config.php";
 
 $sql = "SELECT * FROM Data.apps";
@@ -108,6 +109,7 @@ if ($result->num_rows > 0) {
                                             <div class="col-lg overflow-scroll" style="height: 22rem;">
                                                 <h5 class="sticky-top bg-white">Comments:</h5>
                                                 <ul class="list-group" id="commentsList_' . $row["id"] . '">
+                                                '; if(isset($_SESSION["level"])) { echo '
                                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                                         <button class="btn btn-outline-green w-100 me-auto text-primary"
                                                                 data-bs-target="#' . $row["name"] . 'AddComment"
@@ -122,7 +124,7 @@ if ($result->num_rows > 0) {
         Add Comment
         </button>
                                                     </li>
-                                                    ';
+                                                    '; }
 
 
         echo '
