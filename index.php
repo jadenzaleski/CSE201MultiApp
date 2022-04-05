@@ -415,6 +415,7 @@ session_start();
                     </li>
                 </ul>
                 <!-- search bar -->
+                <link rel = "stylesheet" type = "text/css" href = "searchcss.css">
                 <input type="text" id="searchIn" onkeyup="searchFunc()" placeholder="Search for names..">
 
                 <ul id="myUL">
