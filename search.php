@@ -1,6 +1,6 @@
 <?php
 include "config.php";
-$txt = $_POST['chars'];
+$txt = $_GET['chars'];
 echo $txt;
 //$sql = "SELECT * FROM Data.apps WHERE name LIKE re% " . $_POST['chars'];
 $sql = "SELECT * FROM Data.apps WHERE name LIKE re% $txt ";
