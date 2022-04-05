@@ -430,14 +430,14 @@ $(document).ready(function () {
         })
     });
 
-    $('#searchBar').onchange(function () {
+    $('#searchBar').click(function () {
         let chars = $('#searchBar').val();
         $.ajax({
             url: "search.php",
-            method: "POST",
-            data: {chars: chars},
+            method: "GET",
+            data: {},
             success: function (data) {
-                $('#album').html();
+                $('#album').html(data);
                 // alert('ajax worked');
 
             },
