@@ -1,7 +1,8 @@
 <?php
 include "config.php";
 
-$sql = "SELECT * FROM Data.apps WHERE name LIKE re% " . $_POST['chars'];
+//$sql = "SELECT * FROM Data.apps WHERE name LIKE re% " . $_POST['chars'];
+$sql = "SELECT * FROM Data.apps WHERE name="brk"";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {

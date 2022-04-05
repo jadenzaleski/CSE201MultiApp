@@ -415,23 +415,20 @@ session_start();
                     </li>
                 </ul>
                 <!-- search bar -->
-                <link rel = "stylesheet" type = "text/css" href = "searchcss.css">
+                <!--<link rel = "stylesheet" type = "text/css" href = "searchcss.css">
                 <input type="text" id="searchIn" onkeyup="searchFunc()" placeholder="Search for names..">
-
                 <ul id="myUL">
                     <li><a href="#">Adele</a></li>
                     <li><a href="#">Agnes</a></li>
-
                     <li><a href="#">Billy</a></li>
                     <li><a href="#">Bob</a></li>
-
                     <li><a href="#">Calvin</a></li>
                     <li><a href="#">Christina</a></li>
                     <li><a href="#">Cindy</a></li>
-                </ul>
-                <!--<form class="my-2">
+                </ul>-->
+                <form class="my-2">
                     <input aria-label="Search" id="searchBar" class="form-control" placeholder="Search" type="text">
-                </form>-->
+                </form>
             </div>
         </div>
     </nav>

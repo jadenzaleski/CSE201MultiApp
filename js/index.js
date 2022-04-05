@@ -437,7 +437,7 @@ $(document).ready(function () {
             method: "POST",
             data: {chars: chars},
             success: function (data) {
-                $('#album').html(data);
+                $('#album').html();
                 // alert('ajax worked');
 
             },
