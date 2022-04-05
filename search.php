@@ -2,7 +2,7 @@
 include "config.php";
 $txt = $_POST['chars'];
 //$sql = "SELECT * FROM Data.apps WHERE name LIKE re% " . $_POST['chars'];
-$sql = "SELECT * FROM Data.apps WHERE name= $txt ";
+$sql = "SELECT * FROM Data.apps WHERE name LIKE re% $txt ";
 $result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
