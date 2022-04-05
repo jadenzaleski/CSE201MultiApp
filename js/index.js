@@ -430,7 +430,7 @@ $(document).ready(function () {
         })
     });
 
-    $('#searchBar').change(function () {
+    $('#searchBar').onchange(function () {
         let chars = $('#searchBar').val();
         $.ajax({
             url: "search.php",
