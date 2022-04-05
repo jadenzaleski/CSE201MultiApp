@@ -435,7 +435,7 @@ $(document).ready(function () {
         $.ajax({
             url: "search.php",
             method: "GET",
-            data: {},
+            data: {chars: chars},
             success: function (data) {
                 $('#album').html(data);
                 // alert('ajax worked');
