@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
                                         </svg>
                                     </button>
                                     <script>
-                                    var currName = "' . $row['name'] .'";
+                                    var currName = "' . $row['name'] . '";
 </script>
                                     <button class="btn btn-sm btn-outline-secondary"
                                             data-bs-target="#' . $row["name"] . 'ModalCard"

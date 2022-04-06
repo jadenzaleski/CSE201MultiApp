@@ -18,7 +18,7 @@ $password = "jadenzaleski";
 $connect = mysqli_connect($servername, $username, $password);
 
 // Check connection
-if($connect === false){
+if ($connect === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 // Check connection

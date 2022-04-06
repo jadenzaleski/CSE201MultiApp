@@ -20,6 +20,6 @@ $resultCreate = $connect->query($create);
 
 if (!$resultCreate)
     echo 'id:' . $_POST['id'] . ' $result failed: ' . $result;
-else echo  'Yes: ' . $_POST['id'];
+else echo 'Yes: ' . $_POST['id'];
 
 mysqli_close($connect);

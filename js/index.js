@@ -1,11 +1,10 @@
-
 /**
  * Main javascript file for all custom code.
  * For creating documentation use:
  * @link https://jsdoc.app/index.html
  */
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Function is from bootstrap and it disables form submissions if there are invalid fields
 (function () {
     'use strict'
 
@@ -24,26 +23,8 @@
                 form.classList.add('was-validated')
             }, false)
         })
-})()
-function searchFunc() {
-    // Declare variables
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
+})();
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
 /**
  * @name checkPassword
  * @description Check to see if passwords match.
@@ -86,6 +67,11 @@ function showApps() {
     })
 }
 
+/**
+ * @name showFeatureApp
+ * @description When the page is loaded this is fired and executes showFeatureApp.php.
+ * @return void
+ */
 function showFeatureApp() {
     $.ajax({
         url: "showFeatureApp.php",
@@ -102,6 +88,13 @@ function showFeatureApp() {
     });
 }
 
+/**
+ * @name addRequestedApp
+ * @description Fired when check icon is clicked in app requests form.
+ * Then gets id the of the app and executes addRequestedApp.php;
+ * @param {string} id - id of app.
+ * @returns void
+ */
 function addRequestedApp(id) {
     $('#reqApp_' + id).fadeOut(500, function () {
         $('#reqApp_' + id).remove();
@@ -122,6 +115,13 @@ function addRequestedApp(id) {
 
 }
 
+/**
+ * @name removeRequestedApp
+ * @description  Fired when the trash button is clicked in app request form.
+ * Then gets id the of the app and executes removeRequestedApp.php which removes a requested app;
+ * @param {string} id - id of app.
+ * @returns void
+ */
 function removeRequestedApp(id) {
     $('#reqApp_' + id).fadeOut(500, function () {
         $('#reqApp_' + id).remove();
@@ -256,7 +256,7 @@ $(document).ready(function () {
                     success: function (data) {
                         if (data === 'Yes') {
                             $('#accountCloseBtn').click();
-                            $(':input','#createAccountForm')
+                            $(':input', '#createAccountForm')
                                 .not(':button, :submit, :reset, :hidden')
                                 .val('')
                                 .prop('checked', false)
@@ -321,7 +321,7 @@ $(document).ready(function () {
                 success: function (data) {
                     if (data === 'Yes') {
                         $('#addAppCloseBtn').click();
-                        $(':input','#addAppForm')
+                        $(':input', '#addAppForm')
                             .not(':button, :submit, :reset, :hidden')
                             .val('')
                             .prop('checked', false)

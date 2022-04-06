@@ -1,8 +1,8 @@
 <?php
 
 include "config.php";
-    $sql = "SELECT * FROM Data.apps WHERE windows=true";
-    $result = $connect->query($sql);
+$sql = "SELECT * FROM Data.apps WHERE windows=true";
+$result = $connect->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
                                         </svg>
                                     </button>
                                     <script>
-                                    var currName = "' . $row['name'] .'";
+                                    var currName = "' . $row['name'] . '";
 </script>
                                     <button class="btn btn-sm btn-outline-secondary"
                                             data-bs-target="#' . $row["name"] . 'ModalCard"

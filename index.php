@@ -1,4 +1,5 @@
 <?php
+// this will start a session for each user and save login info to make the website easier to use.
 session_set_cookie_params(0);
 session_start();
 ?>
@@ -6,6 +7,8 @@ session_start();
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <!-- css links -->
+    <!-- Bootstrap is being used to align all content to work wiht the grid system.
+    Bootstrap also provides easy color management for elements.-->
     <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- metadata -->
@@ -15,6 +18,8 @@ session_start();
     <meta content="Jaden Zaleski, Maoqing He, Drew Laikin, Ruoyu Xiang" name="author">
     <title>MultiApp</title>
     <!-- javascript -->
+    <!-- Bootstrap also provides javascript for modal functions and takes care of any animations seen.
+    JQuery is used to shorten our javascript code. -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
@@ -76,7 +81,7 @@ session_start();
                                     <!-- modal header -->
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="accountLoginModalLabel">Account</h5>
-                                        <button aria-label="Close" class="btn-close"  id="" data-bs-dismiss="modal"
+                                        <button aria-label="Close" class="btn-close" id="" data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
                                     <!-- modal body -->
@@ -160,7 +165,8 @@ session_start();
                         <?php
                         if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
                             ?>
-                            <button class="btn btn-outline-light" data-bs-target="#addAppModalForm" data-bs-toggle="modal"
+                            <button class="btn btn-outline-light" data-bs-target="#addAppModalForm"
+                                    data-bs-toggle="modal"
                                     type="button" id="addAppButton">
                                 <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
                                      width="16" xmlns="http://www.w3.org/2000/svg">
@@ -188,12 +194,14 @@ session_start();
                                     <!-- modal header-->
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="addAppModalLabel">Add Application</h5>
-                                        <button aria-label="Close" class="btn-close" id="addAppCloseBtn" data-bs-dismiss="modal"
+                                        <button aria-label="Close" class="btn-close" id="addAppCloseBtn"
+                                                data-bs-dismiss="modal"
                                                 type="button"></button>
                                     </div>
                                     <!-- modal body-->
                                     <div class="modal-body">
-                                        <form class="row g-3 needs-validation" method="post" id="addAppForm" enctype="multipart/form-data">
+                                        <form class="row g-3 needs-validation" method="post" id="addAppForm"
+                                              enctype="multipart/form-data">
                                             <div class="col-md-6">
                                                 <label class="form-label" for="applicationNameInput">Application
                                                     Name</label>
@@ -223,7 +231,8 @@ session_start();
                                             <div class="col-12">
                                                 <label class="form-label" for="fileAjax">Upload Application
                                                     Image</label>
-                                                <input class="form-control form-control-sm" name="fileAjax" id="fileAjax"
+                                                <input class="form-control form-control-sm" name="fileAjax"
+                                                       id="fileAjax"
                                                        required
                                                        type="file" accept="image/*">
                                             </div>
@@ -256,7 +265,8 @@ session_start();
                                                              viewBox="0 2 16 16" width="16"
                                                              xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"/>
-                                                        </svg>Windows</label>
+                                                        </svg>
+                                                        Windows</label>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -266,7 +276,8 @@ session_start();
                                                        required type="number" step="0.01">
                                             </div>
                                             <div class="col-12">
-                                                <button id="addAppSubmit" class="btn btn-primary" type="button">Submit</button>
+                                                <button id="addAppSubmit" class="btn btn-primary" type="button">Submit
+                                                </button>
                                                 <small class="text-muted float-end mt-2">Request will be reviewed by
                                                     admin.</small>
                                             </div>
@@ -414,18 +425,6 @@ session_start();
                         </ul>
                     </li>
                 </ul>
-                <!-- search bar -->
-                <!--<link rel = "stylesheet" type = "text/css" href = "searchcss.css">
-                <input type="text" id="searchIn" onkeyup="searchFunc()" placeholder="Search for names..">
-                <ul id="myUL">
-                    <li><a href="#">Adele</a></li>
-                    <li><a href="#">Agnes</a></li>
-                    <li><a href="#">Billy</a></li>
-                    <li><a href="#">Bob</a></li>
-                    <li><a href="#">Calvin</a></li>
-                    <li><a href="#">Christina</a></li>
-                    <li><a href="#">Cindy</a></li>
-                </ul>-->
                 <form class="my-2">
                     <input aria-label="Search" id="searchBar" class="form-control" placeholder="Search" type="text">
                 </form>
@@ -435,31 +434,7 @@ session_start();
     <!-- album of apps -->
     <div class="album py-5 bg-light">
         <div class="container">
-            <!--                posted comments box for app modal. create one of these for each comment (under add comment li)-->
-            <!--                <li class="list-group-item d-flex justify-content-between align-items-start">-->
-            <!--                    <div class="ms-2 me-auto">-->
-            <!--                        <div class="fw-bold">Jaden Zaleski</div>-->
-            <!--                        <p class="ms-4 w-100 fw-light">Lorem ipsum dolor sit amet, consectetur-->
-            <!--                            adipiscing elit, sed do eiusmod tempor incididunt ut-->
-            <!--                            labore et dolore magna aliqua. Ut enim ad minim veniam,-->
-            <!--                            quis nostrud exercitation ullamco laboris nisi ut-->
-            <!--                            aliquip ex ea commodo consequat. Duis aute irure dolor-->
-            <!--                            in reprehenderit in voluptate velit esse cillum dolore-->
-            <!--                            eu fugiat nulla pariatur.</p>-->
-            <!---->
-            <!--                    </div>-->
-            <!--                    <span class="badge bg-white text-dark mt-1">14 days ago</span>-->
-            <!--                    <button class="btn btn-outline-danger py-0 px-1" type="button">-->
-            <!--                        <svg class="bi bi-trash m-0" fill="currentColor"-->
-            <!--                             height="20" viewBox="0 1 16 16" width="16"-->
-            <!--                             xmlns="http://www.w3.org/2000/svg">-->
-            <!--                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>-->
-            <!--                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"-->
-            <!--                                  fill-rule="evenodd"/>-->
-            <!--                        </svg>-->
-            <!--                    </button>-->
-            <!--                </li>-->
-
+            <!-- posted comments box for app modal. create one of these for each comment (under add comment li) -->
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="album">
                 <!-- where all apps go -->
             </div>

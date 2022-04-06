@@ -24,8 +24,8 @@ if (isset($_POST["username"])) {
     } else {
         if ($checkResult->num_rows > 0) {
             // output data of each row
-            while($row = $checkResult->fetch_assoc()) {
-                echo "id: " . $row["id"]. " - Name: " . $row["firstName"]. " " . $row["lastName"]. "<br>";
+            while ($row = $checkResult->fetch_assoc()) {
+                echo "id: " . $row["id"] . " - Name: " . $row["firstName"] . " " . $row["lastName"] . "<br>";
             }
         } else {
             echo "0 results";

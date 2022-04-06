@@ -4,7 +4,7 @@ include 'config.php';
 $sql = "INSERT INTO Comments.comments_" . $_POST['id'] . " (id, lastName, firstName, comment, createdAt) VALUES (DEFAULT, '" . $_SESSION['lastName'] . "', '" . $_SESSION['firstName'] . "', '" . $_POST['text'] . "', DEFAULT);";
 $result = $connect->query($sql);
 
-$selectSQL = "SELECT row ( name ) FROM Data.apps WHERE id = ". $_POST['id'];
+$selectSQL = "SELECT row ( name ) FROM Data.apps WHERE id = " . $_POST['id'];
 $selectResult = $connect->query($selectSQL);
 echo $selectResult;
 //echo $connect->error;
