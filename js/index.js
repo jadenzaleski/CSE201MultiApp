@@ -429,8 +429,8 @@ $(document).ready(function () {
             }
         })
     });
-
-    $('#searchBar').on('keyup', function () {
+//Searchbar script
+    $('#searchBar').on('keydown', function () {
         let chars = $('#searchBar').val();
         $.ajax({
             url: "search.php",
