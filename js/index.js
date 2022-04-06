@@ -430,7 +430,7 @@ $(document).ready(function () {
         })
     });
 //Searchbar script
-    $('#searchBar').on('keydown', function () {
+    $('#searchBar').on('keyup', function () {
         let chars = $('#searchBar').val();
         $.ajax({
             url: "search.php",
