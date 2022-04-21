@@ -1,14 +1,14 @@
 <?php
 include "config.php";
+// This code redisplays the album based on a new sql Query that narrows the return from the apps table to what the user has searched for
 $txt = $_GET['chars'];
-//$sql = "SELECT * FROM Data.apps WHERE name LIKE re% " . $_POST['chars'];
+//we get the characters from the search feild on index.php and feed it into our query
 $sql = "SELECT * FROM Data.apps WHERE name LIKE '$txt%' ";
 $result = $connect->query($sql);
-
+//now we disply the app tiles with the correct data from the database
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-
         echo '                <!-- app ' . $row["name"] . ' -->
                 <div class="col">
                     <!-- card for app-->
