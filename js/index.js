@@ -141,6 +141,13 @@ function removeRequestedApp(id) {
     });
 }
 
+/**
+ * @name showComments
+ * @description  Fired when the info of the app is loaded
+ * @param {string} id - id of app.
+ * @param {string} name - id of app.
+ * @returns void
+ */
 function showComments(id, name) {
     // alert('fired comment adder: ' + id + " comment: " + text);
     // alert("fired")
@@ -157,6 +164,12 @@ function showComments(id, name) {
     });
 }
 
+/**
+ * @name addCommentForApp
+ * @description  Fired when post button is clicked
+ * @param {string} id - id of app.
+ * @returns void
+ */
 function addCommentForApp(id) {
     let text = $('#' + id + 'Comment').val();
     // alert('fired comment adder: ' + id + " comment: " + text);
@@ -174,6 +187,13 @@ function addCommentForApp(id) {
     });
 }
 
+/**
+ * @name showComments
+ * @description  Fired when the trash icon is clicked on a comment
+ * @param {string} appID - id of app.
+ * @param {string} cID - id of comment.
+ * @returns void
+ */
 function removeComment(appID, cID) {
     $('#commentLI_' + cID).fadeOut(500, function () {
         $('#commentLI_' + cID).remove();

@@ -454,7 +454,7 @@ session_start();
             </a>
         </p>
         <p class="mb-1"><small>Website created by Jaden Zaleski, Maoqing He, Drew Laikin, and Ruoyu Xiang.</small></p>
-        <p class="mb-0"><small>CSE201 at Miami University, Spring 2022</small></p>
+        <p class="mb-0"><small>CSE201 at Miami University, Spring 2022.</small></p>
     </div>
 </footer>
 </html>
