@@ -1,4 +1,7 @@
 <?php
+//Code and documentation for bootstrap segments copyright 2011–2022 the Bootstrap Authors and Twitter, Inc.
+//Bootstrap Code released under the MIT License.
+//Bootstrap Docs released under Creative Commons.
 // this will start a session for each user and save login info to make the website easier to use.
 session_set_cookie_params(0);
 session_start();
