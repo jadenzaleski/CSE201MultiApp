@@ -362,12 +362,12 @@ $(document).ready(function () {
             // Set up the request
             var xhr = new XMLHttpRequest();
             // Open the connection
-            xhr.open('POST', '/uploadImage.php', true);
+            xhr.open('POST', 'uploadImage.php', true);
             // Set up a handler for when the task for the request is complete
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     // alert(xhr.response);
-                    // alert('Upload complete!');
+                    alert('Upload complete!');
                 } else {
                     alert('Upload error. Try again.');
                     alert(xhr.response);
