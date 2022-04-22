@@ -370,6 +370,7 @@ $(document).ready(function () {
                     // alert('Upload complete!');
                 } else {
                     alert('Upload error. Try again.');
+                    alert(xhr.response);
                 }
             };
             // Send the data.
