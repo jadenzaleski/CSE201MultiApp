@@ -224,7 +224,10 @@ $(document).ready(function () {
 
     showApps();
     showFeatureApp();
-
+    /**
+     * Below is all the function that are executed when a certain button is clicked.
+     * Each of these functions executes an AJAX function which allows a php script to be run without changing page location.
+     */
     $('#loginButton').click(function () {
         // alert('fired');
         const username = $('#usernameLoginInput').val();
