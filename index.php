@@ -15,6 +15,7 @@ session_start();
     <!-- https://getbootstrap.com -->
     <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <!-- metadata -->
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -42,12 +43,12 @@ session_start();
                     <?php
                     if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
                         ?>
-                        <h4 class="text-white">
+                        <h4 class="text-white smallName">
                             Hello, <?php echo $_SESSION['firstName'] . " " . $_SESSION['lastName']; ?></h4>
                         <?php
                     } else {
                         ?>
-                        <h4 class="text-white">Hello, please log in.</h4>
+                        <h4 class="text-white" id="smallName">Hello, please log in.</h4>
                         <?php
                     }
                     ?>
@@ -59,7 +60,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
                             ?>
-                            <button class="btn btn-outline-light" id="logout"
+                            <button class="btn btn-outline-light smallName" id="logout"
                                     type="button">
                                 <svg class="bi bi-person me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
                                      width="16" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +71,7 @@ session_start();
                             <?php
                         } else {
                             ?>
-                            <button class="btn btn-outline-light" data-bs-target="#accountModal" data-bs-toggle="modal"
+                            <button class="btn btn-outline-light " data-bs-target="#accountModal" data-bs-toggle="modal"
                                     type="button" id="navLoginButton">
                                 <svg class="bi bi-person me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
                                      width="16" xmlns="http://www.w3.org/2000/svg">
@@ -125,12 +126,12 @@ session_start();
                                                     <!-- create account form. makes sure passwords match-->
                                                     <form class="row needs-validation"
                                                           method="post" id="createAccountForm">
-                                                        <div class="col-6">
+                                                        <div class="col-sm-6 col-12">
                                                             <label class="form-label" for="fn">First Name</label>
                                                             <input class="form-control" id="fn" type="text"
                                                                    name="registrationFirst" required>
                                                         </div>
-                                                        <div class="col-6">
+                                                        <div class="col-sm-6 col-12">
                                                             <label class="form-label" for="ln">Last Name</label>
                                                             <input class="form-control" id="ln" required type="text"
                                                                    name="registrationLast">
@@ -174,7 +175,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) {
                             ?>
-                            <button class="btn btn-outline-light" data-bs-target="#addAppModalForm"
+                            <button class="btn btn-outline-light smallName" data-bs-target="#addAppModalForm"
                                     data-bs-toggle="modal"
                                     type="button" id="addAppButton">
                                 <svg class="bi bi-plus-lg me-1" fill="currentColor" height="16" viewBox="0 2 16 16"
@@ -300,7 +301,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['level']) && $_SESSION['level'] == 2) {
                             ?>
-                            <button class="btn btn-outline-light rounded-end" data-bs-target="#requests"
+                            <button class="btn btn-outline-light rounded-end smallName" data-bs-target="#requests"
                                     data-bs-toggle="modal"
                                     type="button" id="requestsButton">
                                 <svg class="bi bi-files me-1" fill="currentColor" height="20" viewBox="0 2 16 16"

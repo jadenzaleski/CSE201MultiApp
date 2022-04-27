@@ -1,0 +1,9 @@
+@media (max-width:960px) {
+    .smallName {
+        font-size: 10px;
+    }
+
+    .smallComment {
+        font-size: 10px;
+    }
+}

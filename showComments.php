@@ -26,7 +26,7 @@ if (isset($_SESSION["level"])) {
 if ($resultComment && $resultComment->num_rows > 0) {
     while ($rowComment = $resultComment->fetch_assoc()) {
         echo '
-                            <li class="list-group-item d-flex justify-content-between align-items-start" id="commentLI_' . $rowComment['id'] . '">
+                            <li class=" smallComment list-group-item d-flex justify-content-between align-items-start" id="commentLI_' . $rowComment['id'] . '">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold">' . $rowComment["firstName"] . ' ' . $rowComment["lastName"] . '</div>
                                     <p class="ms-4 w-100 fw-light">' . $rowComment["comment"] . '</p>
