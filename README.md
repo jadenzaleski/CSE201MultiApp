@@ -1,7 +1,7 @@
 <h1>CSE201MultiApp</h1>
 
 <h3>[website](http://ceclnx01.cec.miamioh.edu/~zaleskjr/CSE201MultiApp/) </h3>
-<p style="color: gray;"><small>not always up to date</small></p>
+
 
 -----
 <h3>Logins:</h3>
